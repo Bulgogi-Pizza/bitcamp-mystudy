@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"name": "bitcamp-mystudy",
+			"path": "."
+		},
+		{
+			"name": "bitcamp-study",
+			"path": "../bitcamp-study"
+		},
+		{
+			"name": "eomcs-java",
+			"path": "../eomcs-java"
+		},
+		{
+			"name": "eomcs-docs",
+			"path": "../eomcs-docs"
+		},
+		{
+			"name": "bitcamp-20231114",
+			"path": "../bitcamp-20231114"
+		},
+		{
+			"path": "../obsidian-sync/NaverCloudCamp_2405/LoveOfLearning"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "disabled",
+		"java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable",
+		"java.format.settings.url": "bitcamp-mystudy/.vscode/java-formatter.xml",
+		"editor.codeLens": false,
+		"java.inlayHints.parameterNames.enabled": "none"
+	}
+}
