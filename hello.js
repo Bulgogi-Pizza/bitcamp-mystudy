@@ -1,7 +1,5 @@
 console.log("Hello, World!!!");
+//statement ;문장 ; 명령문
 
-let a = 99;
-
-if (a < 100) {
-    console.leg("하하하");
-}
+//Language : 정장
+//Script : 캐주얼
