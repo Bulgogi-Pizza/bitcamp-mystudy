@@ -7,5 +7,5 @@
 // - entry point의 형식은 다음과 같아야 한다.
 //      public static void main(String[] args)
 
-class Test3 {
+class Test03 {
 }

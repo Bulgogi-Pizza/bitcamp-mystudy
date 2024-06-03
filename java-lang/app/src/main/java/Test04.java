@@ -9,7 +9,7 @@
 // main() 메서드의 형식이 옳지 않다.
 // 반드시 public이고 static이고 void이고 main이고 (String[] var) 이어야 한다.
 
-class Test4 {
+class Test04 {
     static void main(String[] a) {
 
     }

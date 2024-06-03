@@ -5,7 +5,7 @@
 // 
 //
 
-class Test5 {
+class Test05 {
     public static void main(String[] args) {
         System.out.println(args[0]);
     }
