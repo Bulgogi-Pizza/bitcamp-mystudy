@@ -3,14 +3,19 @@ package bitcamp.myapp;
 public class Menu {
     static String line = "---------------------------";
     static String projectTitle = "[팀 프로젝트 관리 시스템]";
-    static String[] menu = {"회원", "팀", "프로젝트", "게시판", "도움말", (Ansi.redAnsi + "종료" + Ansi.resetAnsi)};
+    static String[] menu = {"회원", "팀", "프로젝트", "게시판", "도움말",  "종료"};
 
     static void viewMenu(){
         System.out.println(Ansi.boldAnsi + line + Ansi.resetAnsi);
         System.out.println(Ansi.boldAnsi + projectTitle + Ansi.resetAnsi + "\n");
 
         for (int i = 0; i < menu.length; i++) {
-            System.out.println((i+1) + ". " + menu[i]);
+            if (menu[i] == "종료"){
+                System.out.printf("%s%d. %s%s\n",(Ansi.boldAnsi + Ansi.redAnsi), (i + 1), menu[i], Ansi.resetAnsi);
+            }
+            else{
+                System.out.printf("%d. %s\n", (i + 1), menu[i]);
+            }
         }
 
         System.out.println(Ansi.boldAnsi + line + Ansi.resetAnsi);

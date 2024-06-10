@@ -1,23 +1,66 @@
 package bitcamp.myapp;
 
-import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String selectMenu;
-        boolean exitFlag;
+        java.util.Scanner keyboardScanner = new java.util.Scanner(System.in);
 
-        // 메뉴 출력
-        Menu.viewMenu();
+        String boldAnsi = "\033[1m";
+        String redAnsi = "\033[31m";
+        String resetAnsi = "\033[0m";
 
-        // 메뉴 선택
-        do {
-            System.out.print("> ");
-            selectMenu = scanner.next();
-            exitFlag = Menu.selectMenu(selectMenu);
-        } while(exitFlag);
+        String appTitle = "[팀 프로젝트 관리 시스템]";
+        String line = "----------------------------------";
 
-        scanner.close();
+        String[] menus = new String[] {
+            "회원",
+            "팀",
+            "프로젝트",
+            "게시판",
+            "도움말",
+            "종료"
+            };
+
+        System.out.println(boldAnsi + line + resetAnsi);
+        System.out.println(boldAnsi + appTitle + resetAnsi);
+
+        for (int i = 0; i < menus.length; i++) {
+            if (menus[i] == "종료") {
+                System.out.printf("%s%d. %s%s\n", (boldAnsi + redAnsi), (i + 1), menus[i], resetAnsi);
+            } else {
+                System.out.printf("%d. %s\n", (i + 1), menus[i]);
+            }
+        }
+
+        System.out.println(boldAnsi + line + resetAnsi);
+
+        int menuNo = 0;
+        boolean validInput = false;
+
+        while (true) {
+            try {
+                System.out.print("> ");
+                menuNo = keyboardScanner.nextInt();
+                if (menuNo >= 1 && menuNo <= menus.length) {
+                    if (menus[menuNo - 1] == "종료") {
+                        break;
+                    }
+                    System.out.println(menus[menuNo - 1]);
+                }
+                else {
+                    System.out.println("유효한 메뉴 번호가 아닙니다.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("유효하지 않은 입력입니다. 숫자를 입력해주세요.");
+                keyboardScanner.next(); // 잘못된 입력을 소비하고 버립니다.
+            }
+        }
+        System.out.println("종료합니다.");
+
+        // 사용을 완료한 자원은 반환해야 다른 프로세스(프로그램)이 사용할 수 있다.
+        // 단, JVM을 종료하면 JVM이 사용한 모든 자원은 강제 회수된다.
+        // OS가 강제 회수한다.
+        keyboardScanner.close();
     }
 }
