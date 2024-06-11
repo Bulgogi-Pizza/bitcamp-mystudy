@@ -10,7 +10,7 @@ public class Menu {
         System.out.println(Ansi.boldAnsi + projectTitle + Ansi.resetAnsi + "\n");
 
         for (int i = 0; i < menu.length; i++) {
-            if (menu[i] == "종료"){
+            if (menu[i].equals("종료")){
                 System.out.printf("%s%d. %s%s\n",(Ansi.boldAnsi + Ansi.redAnsi), (i + 1), menu[i], Ansi.resetAnsi);
             }
             else{
@@ -24,23 +24,27 @@ public class Menu {
     static boolean selectMenu(String selectMenu){
         boolean exitFlag = true;
 
-        switch (selectMenu) {
-            case "6":
-                exitFlag = false;
-            case "1":
-            case "2":
-            case "3":
-            case "4":
-            case "5":
-                System.out.println(Menu.menu[Integer.parseInt(selectMenu) - 1] + " 항목입니다.");
-                break;
-            case "menu":
-                viewMenu();
-                break;
-            default:
-                System.out.println("잘못된 항목입니다.");
-                break;
-        }
+
+//        switch (selectMenu) {
+//            case "6":
+//                exitFlag = false;
+//            case "1":
+//            case "2":
+//            case "3":
+//            case "4":
+//            case "5":
+//                System.out.println(Menu.menu[Integer.parseInt(selectMenu) - 1] + " 항목입니다.");
+//                break;
+//            case "menu":
+//                viewMenu();
+//                break;
+//            default:
+//                System.out.println("잘못된 항목입니다.");
+//                break;
+//        }
+
+
+
         return exitFlag;
     }
 }
