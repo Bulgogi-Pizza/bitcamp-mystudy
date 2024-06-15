@@ -76,7 +76,9 @@ public class App {
                         list(menuNo);
                     } else if (getSubMenuTitle(menuNo, subMenuNo).equals("조회")) {
                         check(menuNo);
-                    } else if (getSubMenuTitle(menuNo, subMenuNo).equals("삭제")) {
+                    } else if (getSubMenuTitle(menuNo, subMenuNo).equals("변경")) {
+
+                    }else if (getSubMenuTitle(menuNo, subMenuNo).equals("삭제")) {
                         delete(menuNo);
                     } else if (getSubMenuTitle(menuNo, subMenuNo).equals("이전")) {
                         break;
@@ -109,6 +111,21 @@ public class App {
     }
 
     static void list(int menuNo){
+        switch (getMenuTitle(menuNo)) {
+            case "회원":
+                break;
+            case "팀":
+                break;
+            case "프로젝트":
+                break;
+            case "게시판":
+                break;
+            default:
+                break;
+        }
+    }
+
+    static void update(int menuNo){
         switch (getMenuTitle(menuNo)) {
             case "회원":
                 break;

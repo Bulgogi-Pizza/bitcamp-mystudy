@@ -8,12 +8,12 @@ public class App {
     static Scanner keyboardScanner = new Scanner(System.in);
 
     static String[] menus = new String[] {
-        "회원",
-        "팀",
-        "프로젝트",
-        "게시판",
-        "도움말",
-        "종료"
+            "회원",
+            "팀",
+            "프로젝트",
+            "게시판",
+            "도움말",
+            "종료"
     };
 
     public static void main(String[] args) {

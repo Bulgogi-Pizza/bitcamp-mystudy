@@ -14,13 +14,13 @@ public class App {
         String line = "----------------------------------";
 
         String[] menus = new String[] {
-            "회원",
-            "팀",
-            "프로젝트",
-            "게시판",
-            "도움말",
-            "종료"
-            };
+                "회원",
+                "팀",
+                "프로젝트",
+                "게시판",
+                "도움말",
+                "종료"
+        };
 
         System.out.println(boldAnsi + line + resetAnsi);
         System.out.println(boldAnsi + appTitle + resetAnsi);
