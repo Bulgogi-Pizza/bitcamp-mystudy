@@ -27,12 +27,12 @@
 
 ## 작업
 
-- 1) 제목을 저장할 변수 선언 및 초기화: App.main()
-- 2) 구분선을 저장할 변수 선언 및 초기화: App.main()
-- 3) 메뉴를 저장할 변수 선언 및 초기화: App.main()
-- 3) 제목, 구분선, 메뉴를 출력할 문장 작성: App.main()
+- 1) 제목을 저장할 변수 선언 및 초기화: bitcamp.myapp.App.App.main()
+- 2) 구분선을 저장할 변수 선언 및 초기화: bitcamp.myapp.App.App.main()
+- 3) 메뉴를 저장할 변수 선언 및 초기화: bitcamp.myapp.App.App.main()
+- 3) 제목, 구분선, 메뉴를 출력할 문장 작성: bitcamp.myapp.App.App.main()
 
 ## 소스 파일
 
-- App.java
+- bitcamp.myapp.App.App.java
 

@@ -8,12 +8,19 @@ public class App {
     static Scanner keyboardScanner = new Scanner(System.in);
 
     static String[] menus = new String[] {
-            "회원",
-            "팀",
-            "프로젝트",
-            "게시판",
-            "도움말",
-            "종료"
+        "회원",
+        "팀",
+        "프로젝트",
+        "게시판",
+        "도움말",
+        "종료"
+    };
+
+    static String[][] subMenus = new String[][] {
+            {"등록", "목록", "조회", "변경", "삭제", "이전"},
+            {"등록", "목록", "조회", "변경", "삭제", "이전"},
+            {"등록", "목록", "조회", "변경", "삭제", "이전"},
+            {"등록", "목록", "조회", "변경", "삭제", "이전"}
     };
 
     public static void main(String[] args) {
@@ -23,7 +30,7 @@ public class App {
         String command;
         while (true) {
             try {
-                command = prompt();
+                command = prompt("메인");
 
                 if (command.equals("menu")) {
                     printMenu();
@@ -36,7 +43,7 @@ public class App {
                     } else if (menuTitle.equals("종료")) {
                         break;
                     } else {
-                        System.out.println(menuTitle);
+                        printSubMenu(menuNo);
                     }
                 }
             } catch (NumberFormatException ex) {
@@ -47,6 +54,10 @@ public class App {
         System.out.println("종료합니다.");
 
         keyboardScanner.close();
+    }
+
+    static void printSubMenu(int menuNo) {
+
     }
 
     static void printMenu() {
@@ -71,8 +82,8 @@ public class App {
         System.out.println(boldAnsi + line + resetAnsi);
     }
 
-    static String prompt() {
-        System.out.print("> ");
+    static String prompt(String menuTitle) {
+        System.out.print(menuTitle + "> ");
         return keyboardScanner.nextLine();
     }
 

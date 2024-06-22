@@ -38,11 +38,11 @@
 
 ## 작업
 
-- 1) 프롬프트를 통해 입력 받는 기능을 구현: App.main()
+- 1) 프롬프트를 통해 입력 받는 기능을 구현: bitcamp.myapp.App.App.main()
   - java.util.Scanner, System.in 사용
-- 2) 반복문을 이용하여 메뉴 입력을 반복해서 처리: App.main()
+- 2) 반복문을 이용하여 메뉴 입력을 반복해서 처리: bitcamp.myapp.App.App.main()
   - do ~ while 문 사용
-- 3) 메뉴 번호에 따라 출력 문구를 변경하는 조건을 처리: App.main()
+- 3) 메뉴 번호에 따라 출력 문구를 변경하는 조건을 처리: bitcamp.myapp.App.App.main()
   - switch 문 사용
 
 ## 소스 파일
@@ -53,5 +53,5 @@ run {
     standardInput = System.in // 기본 값은 empty stream 이다.
 }
 ```
-- App.java
+- bitcamp.myapp.App.App.java
 
