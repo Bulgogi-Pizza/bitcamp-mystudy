@@ -1,0 +1,27 @@
+// 0) 패턴 적용 전
+// 1) private 생성자 + Factory Method 설계 패턴
+
+package study.patterns.ex01;
+
+import study.patterns.ex01.step4.Car;
+import study.patterns.ex01.step4.CarFactory;
+import study.patterns.ex01.step4.K7Factory;
+import study.patterns.ex01.step4.SonataFactory;
+
+public class Test04 {
+  public static void main(String[] args) {
+    // Sedan sonata = new Sedan(); 불가능
+
+    SonataFactory sonataFactory = new SonataFactory();
+    K7Factory k7Factory = new K7Factory();
+
+    printCar(sonataFactory);
+    printCar(k7Factory);
+
+  }
+
+  static void printCar (CarFactory carFactory) {
+    Car car = carFactory.createCar();   //CarFactory 사용 규칙에 따라 메서드 실행
+    System.out.println(car);
+  }
+}
