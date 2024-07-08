@@ -1,5 +1,7 @@
 package study.patterns.ex01.step3;
 
+import study.uml.class_diagram.Sedan;
+
 public class SonataFactory extends CarFactory {
   @Override
   public Sedan createCar() {
