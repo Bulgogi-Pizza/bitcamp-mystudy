@@ -109,7 +109,7 @@
     
 ## 소스 파일
 
-- bitcamp.myapp.App.App.java
+- App.java
 - User.java
 - UserCommand.java
 - Project.java

@@ -44,14 +44,14 @@
   - BoardCommand 클래스 변경
     - 스태틱 필드를 인스턴스 필드로 변경
     - 스태틱 메서드를 인스턴스 메서드로 변경
-- bitcamp.myapp.App.App 클래스 변경
+- App 클래스 변경
   - 게시판의 게시글을 저장할 BoardCommand 인스턴스를 생성한다.
   - 공지사항 게시글을 저장할 BoardCommand 인스턴스를 생성한다.
 - 나머지 클래스들도 데이터를 목적에 따라 분리해서 관리할 수 있도록 BoardCommand와 BoardList처럼 변경
 
 ## 소스 파일
 
-- bitcamp.myapp.App.App.java
+- App.java
 - UserCommand.java
 - ProjectCommand.java
 - BoardCommand.java

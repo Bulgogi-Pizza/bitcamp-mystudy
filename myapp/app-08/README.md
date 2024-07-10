@@ -30,5 +30,5 @@
 
 ## 소스 파일
 
-- bitcamp.myapp.App.App.java
+- App.java
 

@@ -13,5 +13,4 @@ public class Stack extends LinkedList {
   public boolean isEmpty() {
     return size() == 0;
   }
-
 }

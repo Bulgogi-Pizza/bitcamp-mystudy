@@ -85,7 +85,7 @@ BUILD SUCCESSFUL in 2s
 
 - 4) IntelliJ IDE 로 프로젝트 가져오기
     - 프로젝트 열기: myapp/settings.gradle 선택 > 프로젝트 열기
-- 5) 애플리케이션 제목을 출력: bitcamp.myapp.App.App.main()
+- 5) 애플리케이션 제목을 출력: App.main()
 - 6) 애플리케이션 실행
     - Gradle 도구: myapp/Tasks/application/run 실행 
 
@@ -95,8 +95,8 @@ BUILD SUCCESSFUL in 2s
 - build.gradle
 ```
 application {
-    mainClass = 'bitcamp.myapp.bitcamp.myapp.App.App'
+    mainClass = 'bitcamp.myapp.App'
 }
 ```
-- bitcamp.myapp.App.App.java
+- App.java
 

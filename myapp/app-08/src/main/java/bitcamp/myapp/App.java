@@ -16,13 +16,6 @@ public class App {
         "종료"
     };
 
-    static String[][] subMenus = new String[][] {
-            {"등록", "목록", "조회", "변경", "삭제", "이전"},
-            {"등록", "목록", "조회", "변경", "삭제", "이전"},
-            {"등록", "목록", "조회", "변경", "삭제", "이전"},
-            {"등록", "목록", "조회", "변경", "삭제", "이전"}
-    };
-
     public static void main(String[] args) {
 
         printMenu(); // 메서드에 묶인 코드를 실행하는 것을 "메서드를 호출(call)한다"라고 부른다.
@@ -30,7 +23,7 @@ public class App {
         String command;
         while (true) {
             try {
-                command = prompt("메인");
+                command = prompt();
 
                 if (command.equals("menu")) {
                     printMenu();
@@ -43,7 +36,7 @@ public class App {
                     } else if (menuTitle.equals("종료")) {
                         break;
                     } else {
-                        printSubMenu(menuNo);
+                        System.out.println(menuTitle);
                     }
                 }
             } catch (NumberFormatException ex) {
@@ -54,10 +47,6 @@ public class App {
         System.out.println("종료합니다.");
 
         keyboardScanner.close();
-    }
-
-    static void printSubMenu(int menuNo) {
-
     }
 
     static void printMenu() {
@@ -82,8 +71,8 @@ public class App {
         System.out.println(boldAnsi + line + resetAnsi);
     }
 
-    static String prompt(String menuTitle) {
-        System.out.print(menuTitle + "> ");
+    static String prompt() {
+        System.out.print("> ");
         return keyboardScanner.nextLine();
     }
 
