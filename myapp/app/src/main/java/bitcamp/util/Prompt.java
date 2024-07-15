@@ -1,5 +1,6 @@
-package bitcamp.myapp.util;
+package bitcamp.util;
 
+import bitcamp.myapp.util.Queue;
 import java.util.Scanner;
 
 public class Prompt {
@@ -10,7 +11,7 @@ public class Prompt {
   public static String input(String format, Object... args) {
     String promptTitle = String.format(format + " ", args);
     System.out.print(promptTitle);
-    
+
     String input = keyboardScanner.nextLine();
     if (format.endsWith(">")) {
       inputQueue.offer(promptTitle + input); // 최근 명령어를 큐의 맨 뒤에 넣는다.
