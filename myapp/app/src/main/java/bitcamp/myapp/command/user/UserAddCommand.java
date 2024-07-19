@@ -15,6 +15,7 @@ public class UserAddCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     User user = new User();
     user.setName(Prompt.input("이름?"));
     user.setEmail(Prompt.input("이메일?"));
@@ -23,5 +24,4 @@ public class UserAddCommand implements Command {
     user.setNo(User.getNextSeqNo());
     userList.add(user);
   }
-
 }

@@ -16,6 +16,7 @@ public class BoardAddCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     Board board = new Board();
     board.setTitle(Prompt.input("제목?"));
     board.setContent(Prompt.input("내용?"));

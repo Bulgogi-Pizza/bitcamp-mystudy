@@ -1,9 +1,14 @@
 package bitcamp.myapp.vo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 // 메모리 설계도
-public class User {
+// Serializable 인터페이스
+// - 추상 메서드가 없다.
+// - 직렬화/역직렬화를 승인한다는 표시로 사용한다.
+// - 유사한 예) Cloneable 인터페이스
+public class User implements Serializable {
 
   private static int seqNo;
 
@@ -12,6 +17,17 @@ public class User {
   private String email;
   private String password;
   private String tel;
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "no=" + no +
+        ", name='" + name + '\'' +
+        ", email='" + email + '\'' +
+        ", password='" + password + '\'' +
+        ", tel='" + tel + '\'' +
+        '}';
+  }
 
   public User() {
   }
@@ -22,6 +38,45 @@ public class User {
 
   public static int getNextSeqNo() {
     return ++seqNo;
+  }
+
+  public static void initSeqNo(int no) {
+    seqNo = no;
+  }
+
+  public static int getSeqNo() {
+    return seqNo;
+  }
+
+  public String toCsvString() {
+    return new StringBuilder().append(no + "," + name + "," + email + "," + password + "," + tel)
+        .toString();
+  }
+
+  public static User valueOf(String csv) {
+    String[] values = csv.split(",");
+    User user = new User();
+    user.setNo(Integer.valueOf(values[0]));
+    user.setName(values[1]);
+    user.setEmail(values[2]);
+    user.setPassword(values[3]);
+    user.setTel(values[4]);
+    return user;
+  }
+
+  public static void main(String[] args) {
+    User user = new User();
+    user.setNo(100);
+    user.setTel("010-1251-1241");
+    user.setEmail("honh@gmail.com");
+    user.setName("구미호");
+    user.setPassword("1234");
+
+    String csv = user.toCsvString();
+    System.out.println(csv);
+
+    User user2 = User.valueOf(csv);
+    System.out.println(user2.toString());
   }
 
   @Override

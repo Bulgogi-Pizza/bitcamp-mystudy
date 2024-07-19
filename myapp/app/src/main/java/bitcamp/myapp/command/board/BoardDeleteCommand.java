@@ -15,13 +15,17 @@ public class BoardDeleteCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     int boardNo = Prompt.inputInt("게시글 번호?");
-    Board deletedBoard = (Board) boardList.get(boardList.indexOf(new Board(boardNo)));
-    if (deletedBoard != null) {
-      boardList.remove(boardList.indexOf(deletedBoard));
-      System.out.printf("%d번 게시글을 삭제 했습니다.\n", deletedBoard.getNo());
-    } else {
+    int index = boardList.indexOf(new Board(boardNo));
+    if (index == -1) {
       System.out.println("없는 게시글입니다.");
+      return;
     }
+
+    Board deletedBoard = boardList.remove(index);
+    System.out.printf("%d번 게시글을 삭제 했습니다.\n", deletedBoard.getNo());
   }
+
+
 }

@@ -2,7 +2,6 @@ package bitcamp.myapp.command.user;
 
 import bitcamp.myapp.command.Command;
 import bitcamp.myapp.vo.User;
-import java.util.Iterator;
 import java.util.List;
 
 public class UserListCommand implements Command {
@@ -15,10 +14,9 @@ public class UserListCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     System.out.println("번호 이름 이메일");
-    Iterator iterator = userList.iterator();
-    while (iterator.hasNext()) {
-      User user = (User) iterator.next();
+    for (User user : userList) {
       System.out.printf("%d %s %s\n", user.getNo(), user.getName(), user.getEmail());
     }
   }

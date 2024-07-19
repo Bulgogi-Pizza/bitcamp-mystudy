@@ -10,13 +10,15 @@ public class ProjectAddCommand implements Command {
   private List<Project> projectList;
   private ProjectMemberHandler memberHandler;
 
-  public ProjectAddCommand(List projectList, ProjectMemberHandler memberHandler) {
+  public ProjectAddCommand(List<Project> projectList, ProjectMemberHandler memberHandler) {
     this.projectList = projectList;
     this.memberHandler = memberHandler;
   }
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
+
     Project project = new Project();
     project.setTitle(Prompt.input("프로젝트명?"));
     project.setDescription(Prompt.input("설명?"));
@@ -32,6 +34,4 @@ public class ProjectAddCommand implements Command {
 
     System.out.println("등록했습니다.");
   }
-
-
 }

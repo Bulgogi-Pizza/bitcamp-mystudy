@@ -1,10 +1,11 @@
 package bitcamp.myapp.vo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Project {
+public class Project implements Serializable {
 
   private static int seqNo;
 
@@ -13,10 +14,10 @@ public class Project {
   private String description;
   private String startDate;
   private String endDate;
-  private List members;
+  private List<User> members;
 
   { // 인스턴스 블록
-    members = new ArrayList();
+    members = new ArrayList<>();
   }
 
   public Project() {
@@ -28,6 +29,18 @@ public class Project {
 
   public static int getNextSeqNo() {
     return ++seqNo;
+  }
+
+  public static void initSeqNo(int no) {
+    seqNo = no;
+  }
+
+  public static int getSeqNo() {
+    return seqNo;
+  }
+
+  public static Project valueOf(String csv) {
+    
   }
 
   @Override
@@ -87,7 +100,7 @@ public class Project {
     this.endDate = endDate;
   }
 
-  public List getMembers() {
+  public List<User> getMembers() {
     return members;
   }
 }

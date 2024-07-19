@@ -15,10 +15,10 @@ public abstract class AbstractMenu implements Menu {
     if (this == o) {
       return true;
     }
-    if (!(o instanceof AbstractMenu lll)) {
+    if (!(o instanceof AbstractMenu menuItem)) {
       return false;
     }
-    return Objects.equals(title, lll.title);
+    return Objects.equals(title, menuItem.title);
   }
 
   @Override

@@ -26,7 +26,5 @@ public class MenuItem extends AbstractMenu {
     } else {
       System.out.println(title);
     }
-
   }
-
 }

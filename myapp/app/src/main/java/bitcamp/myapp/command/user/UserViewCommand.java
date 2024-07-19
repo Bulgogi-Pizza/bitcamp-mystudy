@@ -15,12 +15,15 @@ public class UserViewCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     int userNo = Prompt.inputInt("회원번호?");
-    User user = (User) userList.get(userList.indexOf(new User(userNo)));
-    if (user == null) {
+    int index = userList.indexOf(new User(userNo));
+    if (index == -1) {
       System.out.println("없는 회원입니다.");
       return;
     }
+
+    User user = userList.get(index);
 
     System.out.printf("이름: %s\n", user.getName());
     System.out.printf("이메일: %s\n", user.getEmail());

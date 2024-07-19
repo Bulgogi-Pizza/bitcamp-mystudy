@@ -15,12 +15,15 @@ public class UserUpdateCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     int userNo = Prompt.inputInt("회원번호?");
-    User user = (User) userList.get(userList.indexOf(new User(userNo)));
-    if (user == null) {
+    int index = userList.indexOf(new User(userNo));
+    if (index == -1) {
       System.out.println("없는 회원입니다.");
       return;
     }
+
+    User user = userList.get(index);
 
     user.setName(Prompt.input("이름(%s)?", user.getName()));
     user.setEmail(Prompt.input("이메일(%s)?", user.getEmail()));
@@ -28,4 +31,5 @@ public class UserUpdateCommand implements Command {
     user.setTel(Prompt.input("연락처(%s)?", user.getTel()));
     System.out.println("변경 했습니다.");
   }
+
 }

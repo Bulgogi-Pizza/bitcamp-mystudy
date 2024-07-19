@@ -1,9 +1,11 @@
 package bitcamp.myapp.vo;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Board {
+public class Board implements Serializable {
 
   private static int seqNo;
 
@@ -14,7 +16,6 @@ public class Board {
   private int viewCount;
 
   public Board() {
-
   }
 
   public Board(int no) {
@@ -23,6 +24,38 @@ public class Board {
 
   public static int getNextSeqNo() {
     return ++seqNo;
+  }
+
+  public static void initSeqNo(int no) {
+    seqNo = no;
+  }
+
+  public static int getSeqNo() {
+    return seqNo;
+  }
+
+  public String toCsvString() {
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    return new StringBuilder().append(
+            no + "," + title + "," + content + "," + format.format(createdDate) + "," + viewCount)
+        .toString();
+  }
+
+  public static Board valueOf(String csv) {
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    try {
+      String[] values = csv.split(",");
+      Board board = new Board();
+      board.setNo(Integer.valueOf(values[0]));
+      board.setTitle(values[1]);
+      board.setContent(values[2]);
+      board.setCreatedDate(format.parse(values[3]));
+      board.setViewCount(Integer.valueOf(values[4]));
+      return board;
+    } catch (Exception e) {
+      return null;
+    }
   }
 
   @Override
