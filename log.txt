@@ -12,3 +12,8 @@
 자동 커밋 푸시 완료
 자동 커밋 푸시 시작 2024-07-25
 date
+[main 1870f9a] add 2024-07-25 educations
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+자동 커밋 푸시 완료
+자동 커밋 푸시 시작 2024-07-25
+
