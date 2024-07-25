@@ -25,19 +25,15 @@ import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.SequenceNo;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -46,6 +42,9 @@ public class App {
 
 
   MenuGroup mainMenu = new MenuGroup("메인");
+
+  Map<Integer, User> userMap = new HashMap<>();
+  List<Integer> userNoList = new ArrayList<>();
 
   List<User> userList = new ArrayList<>();
   List<Project> projectList = new LinkedList<>();
@@ -56,11 +55,11 @@ public class App {
     loadData();
 
     MenuGroup userMenu = new MenuGroup("회원");
-    userMenu.add(new MenuItem("등록", new UserAddCommand(userList)));
-    userMenu.add(new MenuItem("목록", new UserListCommand(userList)));
-    userMenu.add(new MenuItem("조회", new UserViewCommand(userList)));
-    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userList)));
-    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userList)));
+    userMenu.add(new MenuItem("등록", new UserAddCommand(userMap, userNoList)));
+    userMenu.add(new MenuItem("목록", new UserListCommand(userMap, userNoList)));
+    userMenu.add(new MenuItem("조회", new UserViewCommand(userMap)));
+    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userMap)));
+    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userMap, userNoList)));
     mainMenu.add(userMenu);
 
     MenuGroup projectMenu = new MenuGroup("프로젝트");
@@ -112,91 +111,126 @@ public class App {
   }
 
   private void loadData() {
-//    loadJson(userList, "user.json", User.class);
-//    loadJson(projectList, "project.json", Project.class);
-//    loadJson(boardList, "board.json", Board.class);
+    try {
+      XSSFWorkbook workbook = new XSSFWorkbook("data.xlsx");
 
-    try (FileInputStream in = new FileInputStream("data.xlsx")) {
-      XSSFWorkbook workbook = new XSSFWorkbook(in);
+      loadUsers(workbook);
+      loadBoards(workbook);
+      loadProjects(workbook);
 
-      loadUsers(userList, workbook);
-      loadBoards(boardList, workbook);
-      loadProjects(projectList, workbook);
-
+      System.out.println("데이터를 로딩 했습니다.");
 
     } catch (Exception e) {
-      System.out.println("데이터 로드 중 오류 발생!");
+      System.out.println("데이터 로딩 중 오류 발생!");
       e.printStackTrace();
     }
-
-    System.out.println("데이터를 로드했습니다.");
   }
 
-  private void loadUsers(List<User> userList, XSSFWorkbook workbook) throws Exception {
+  private void loadUsers(XSSFWorkbook workbook) {
     XSSFSheet sheet = workbook.getSheet("users");
 
     for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-      User user = new User();
       Row row = sheet.getRow(i);
+      try {
+        User user = new User();
+        user.setNo(Integer.parseInt(row.getCell(0).getStringCellValue()));
+        user.setName(row.getCell(1).getStringCellValue());
+        user.setEmail(row.getCell(2).getStringCellValue());
+        user.setPassword(row.getCell(3).getStringCellValue());
+        user.setTel(row.getCell(4).getStringCellValue());
 
-      user.setNo(Integer.parseInt(row.getCell(0).getStringCellValue()));
-      user.setName(row.getCell(1).getStringCellValue());
-      user.setEmail(row.getCell(2).getStringCellValue());
-      user.setPassword(row.getCell(3).getStringCellValue());
-      user.setTel(row.getCell(4).getStringCellValue());
+        userMap.put(user.getNo(), user);
+        userNoList.add(user.getNo());
 
-      userList.add(user);
+      } catch (Exception e) {
+        System.out.printf("%s 번 회원의 데이터 형식이 맞지 않습니다.\n", row.getCell(0).getStringCellValue());
+      }
     }
-    initSeqNo(userList, User.class);
+
+    try {
+      initSeqNo(userNoList, User.class);
+    } catch (Exception e) {
+      System.out.println("회원 일련 번호 초기화 오류!");
+    }
+
   }
 
-  private void loadBoards(List<Board> boardList, XSSFWorkbook workbook) throws Exception {
+  private void loadBoards(XSSFWorkbook workbook) {
     XSSFSheet sheet = workbook.getSheet("boards");
 
     for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-      Board board = new Board();
       Row row = sheet.getRow(i);
 
-      board.setNo(Integer.parseInt(row.getCell(0).getStringCellValue()));
-      board.setTitle(row.getCell(1).getStringCellValue());
-      board.setContent(row.getCell(2).getStringCellValue());
+      try {
+        Board board = new Board();
+        board.setNo(Integer.parseInt(row.getCell(0).getStringCellValue()));
+        board.setTitle(row.getCell(1).getStringCellValue());
+        board.setContent(row.getCell(2).getStringCellValue());
 
-      SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-      board.setCreatedDate(formatter.parse(row.getCell(3).getStringCellValue()));
-      board.setViewCount((int) row.getCell(4).getNumericCellValue());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        board.setCreatedDate(formatter.parse(row.getCell(3).getStringCellValue()));
 
-      boardList.add(board);
+        board.setViewCount(Integer.parseInt(row.getCell(4).getStringCellValue()));
+
+        boardList.add(board);
+
+      } catch (Exception e) {
+        System.out.printf("%s 번 게시글의 데이터 형식이 맞지 않습니다.\n", row.getCell(0).getStringCellValue());
+      }
     }
-    initSeqNo(boardList, Board.class);
+
+    try {
+      initSeqNo(boardList, Board.class);
+    } catch (Exception e) {
+      System.out.println("게시글 일련 번호 초기화 오류!");
+    }
   }
 
-  private void loadProjects(List<Project> projectList, XSSFWorkbook workbook) throws Exception {
+  private void loadProjects(XSSFWorkbook workbook) {
     XSSFSheet sheet = workbook.getSheet("projects");
 
     for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-      Project project = new Project();
       Row row = sheet.getRow(i);
 
-      project.setNo(Integer.parseInt(row.getCell(0).getStringCellValue()));
-      project.setTitle(row.getCell(1).getStringCellValue());
-      project.setDescription(row.getCell(2).getStringCellValue());
-      project.setStartDate(row.getCell(3).getStringCellValue());
-      project.setEndDate(row.getCell(4).getStringCellValue());
+      try {
+        Project project = new Project();
+        project.setNo(Integer.parseInt(row.getCell(0).getStringCellValue()));
+        project.setTitle(row.getCell(1).getStringCellValue());
+        project.setDescription(row.getCell(2).getStringCellValue());
+        project.setStartDate(row.getCell(3).getStringCellValue());
+        project.setEndDate(row.getCell(4).getStringCellValue());
 
-      for (String member : row.getCell(5).getStringCellValue().split(",")) {
-        for (User user : userList) {
-          if (user.getNo() == Integer.parseInt(member)) {
-            project.getMembers().add(user);
+        String[] members = row.getCell(5).getStringCellValue().split(",");
+        for (String memberNo : members) {
+          User member = findUserByNo(Integer.parseInt(memberNo));
+          if (member != null) {
+            project.getMembers().add(member);
           }
         }
+        projectList.add(project);
+
+      } catch (Exception e) {
+        System.out.printf("%s 번 프로젝트의 데이터 형식이 맞지 않습니다.\n", row.getCell(0).getStringCellValue());
       }
-      projectList.add(project);
     }
 
-    initSeqNo(projectList, Project.class);
+    try {
+      initSeqNo(projectList, Project.class);
+    } catch (Exception e) {
+      System.out.println("프로젝트 일련 번호 초기화 오류!");
+    }
   }
 
-  private <E> void initSeqNo(List<E> list, Class<E> elementType) throws Exception {
+  private User findUserByNo(int no) {
+    for (User user : userList) {
+      if (user.getNo() == no) {
+        return user;
+      }
+    }
+    return null;
+  }
+
+  private <E> void initSeqNo(Collection<Integer> list, Class<E> elementType) throws Exception {
     int maxSeqNo = 0;
     for (Object element : list) {
       SequenceNo seqObj = (SequenceNo) element;
@@ -204,47 +238,17 @@ public class App {
         maxSeqNo = seqObj.getNo();
       }
     }
+
     Method method = elementType.getMethod("initSeqNo", int.class);
     method.invoke(null, maxSeqNo);
     // 위 코드는 다음과 같다.
     // 예) User.initSeqNo(maxSeqNo);
   }
 
-  private <E> void loadJson(List<E> list, String filename, Class<E> elementType) {
-    try (BufferedReader in = new BufferedReader(new FileReader(filename))) {
-
-      StringBuilder strBuilder = new StringBuilder();
-      String line;
-      while ((line = in.readLine()) != null) {
-        strBuilder.append(line);
-      }
-
-      list.addAll((List<E>) new GsonBuilder()
-          .setDateFormat("yyyy-MM-dd HH:mm:ss")
-          .create().fromJson(strBuilder.toString(),
-              TypeToken.getParameterized(List.class, elementType)));
-
-      // 읽어 들인 객체의 타입이 SequenceNo 구현체라면
-      // 일련 번호를 객체 식별 번호로 사용한다는 것이기 때문에
-      // 목록에 저장된 객체 중에서 일련 번호가 가장 큰 일련 번호를 알아내서
-      // 클래스의 스태틱 필드에 설정해야 한다.
-      for (Class<?> type : elementType.getInterfaces()) {
-        if (type == SequenceNo.class) {
-          initSeqNo(list, elementType);
-          break;
-        }
-      }
-
-
-    } catch (Exception e) {
-      System.out.println(filename + " 파일 로딩 중 오류 발생!");
-      e.printStackTrace();
-    }
-  }
-
   private void saveData() {
     try {
       XSSFWorkbook workbook = new XSSFWorkbook();
+
       saveUsers(workbook);
       saveBoards(workbook);
       saveProjects(workbook);
@@ -253,6 +257,7 @@ public class App {
         workbook.write(out);
       }
       System.out.println("데이터를 저장 했습니다.");
+
     } catch (Exception e) {
       System.out.println("데이터 저장 중 오류 발생!");
       e.printStackTrace();
@@ -262,16 +267,17 @@ public class App {
   private void saveUsers(XSSFWorkbook workbook) {
     XSSFSheet sheet = workbook.createSheet("users");
 
+    // 셀 이름 출력
     String[] cellHeaders = {"no", "name", "email", "password", "tel"};
     Row headerRow = sheet.createRow(0);
     for (int i = 0; i < cellHeaders.length; i++) {
       headerRow.createCell(i).setCellValue(cellHeaders[i]);
     }
 
-    for (int i = 1; i <= userList.size(); i++) {
-      User user = userList.get(i - 1);
-      Row dataRow = sheet.createRow(i);
-
+    // 데이터 저장
+    int rowNo = 1;
+    for (User user : userMap.values()) {
+      Row dataRow = sheet.createRow(rowNo++);
       dataRow.createCell(0).setCellValue(String.valueOf(user.getNo()));
       dataRow.createCell(1).setCellValue(user.getName());
       dataRow.createCell(2).setCellValue(user.getEmail());
@@ -283,39 +289,42 @@ public class App {
   private void saveBoards(XSSFWorkbook workbook) {
     XSSFSheet sheet = workbook.createSheet("boards");
 
-    String[] cellHeaders = {"no", "title", "content", "create_date", "view_count"};
+    // 셀 이름 출력
+    String[] cellHeaders = {"no", "title", "content", "created_date", "view_count"};
     Row headerRow = sheet.createRow(0);
     for (int i = 0; i < cellHeaders.length; i++) {
       headerRow.createCell(i).setCellValue(cellHeaders[i]);
     }
 
-    for (int i = 1; i <= boardList.size(); i++) {
-      Board board = boardList.get(i - 1);
-      Row dataRow = sheet.createRow(i);
-
+    // 데이터 저장
+    for (int i = 0; i < boardList.size(); i++) {
+      Board board = boardList.get(i);
+      Row dataRow = sheet.createRow(i + 1);
       dataRow.createCell(0).setCellValue(String.valueOf(board.getNo()));
       dataRow.createCell(1).setCellValue(board.getTitle());
       dataRow.createCell(2).setCellValue(board.getContent());
 
       SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
       dataRow.createCell(3).setCellValue(formatter.format(board.getCreatedDate()));
-      dataRow.createCell(4).setCellValue(board.getViewCount());
+
+      dataRow.createCell(4).setCellValue(String.valueOf(board.getViewCount()));
     }
   }
 
   private void saveProjects(XSSFWorkbook workbook) {
     XSSFSheet sheet = workbook.createSheet("projects");
 
+    // 셀 이름 출력
     String[] cellHeaders = {"no", "title", "description", "start_date", "end_date", "members"};
     Row headerRow = sheet.createRow(0);
     for (int i = 0; i < cellHeaders.length; i++) {
       headerRow.createCell(i).setCellValue(cellHeaders[i]);
     }
 
-    for (int i = 1; i <= projectList.size(); i++) {
-      Project project = projectList.get(i - 1);
-      Row dataRow = sheet.createRow(i);
-
+    // 데이터 저장
+    for (int i = 0; i < projectList.size(); i++) {
+      Project project = projectList.get(i);
+      Row dataRow = sheet.createRow(i + 1);
       dataRow.createCell(0).setCellValue(String.valueOf(project.getNo()));
       dataRow.createCell(1).setCellValue(project.getTitle());
       dataRow.createCell(2).setCellValue(project.getDescription());
@@ -333,15 +342,4 @@ public class App {
     }
   }
 
-  private void saveJson(Object obj, String filename) {
-    try (FileWriter out = new FileWriter(filename)) {
-      out.write(new GsonBuilder()
-          .setDateFormat("yyyy-MM-dd HH:mm:ss")
-          .create()
-          .toJson(obj));
-    } catch (IOException e) {
-      System.out.println(filename + " 파일 저장 중 오류 발생!");
-      e.printStackTrace();
-    }
-  }
 }
