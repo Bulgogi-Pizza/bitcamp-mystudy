@@ -33,6 +33,7 @@ public class ProjectMemberHandler {
         }
 
         project.getMembers().add(user);
+        ;
         System.out.printf("'%s'을 추가했습니다.\n", user.getName());
       } catch (Exception e) {
         System.out.println("팀원 추가 중 오류 발생!");
@@ -46,7 +47,7 @@ public class ProjectMemberHandler {
       User member = (User) obj;
 
       String str = Prompt.input("팀원(%s) 삭제?", member.getName());
-      
+
       if (str.equalsIgnoreCase("y")) {
         project.getMembers().remove(member);
         System.out.printf("'%s' 팀원을 삭제합니다.\n", member.getName());
