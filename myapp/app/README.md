@@ -16,14 +16,15 @@
 ## 작업
 
 - 데이터를 저장
-  - App 클래스 변경
-    - loadData(), saveData() 메서드 추가
-    - loadUsers(), saveUsers() 메서드 추가
-    - loadProjects(), saveProjects() 메서드 추가
-    - loadBoards(), saveBoards() 메서드 추가
-  - User, Project, Board 클래스 변경
-    - getSeqNo(), initSeqNo() 메서드 추가
-    - getBytes(), valueOf() 메서드 추가
+    - App 클래스 변경
+        - loadData(), saveData() 메서드 추가
+        - loadUsers(), saveUsers() 메서드 추가
+        - loadProjects(), saveProjects() 메서드 추가
+        - loadBoards(), saveBoards() 메서드 추가
+    - User, Project, Board 클래스 변경
+        - getSeqNo(), initSeqNo() 메서드 추가
+        - getBytes(), valueOf() 메서드 추가
+
 ## 소스 파일
 
 - App.java

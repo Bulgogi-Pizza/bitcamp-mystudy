@@ -44,7 +44,9 @@ public class ProjectMemberHandler {
     Object[] members = project.getMembers().toArray();
     for (Object obj : members) {
       User member = (User) obj;
+
       String str = Prompt.input("팀원(%s) 삭제?", member.getName());
+      
       if (str.equalsIgnoreCase("y")) {
         project.getMembers().remove(member);
         System.out.printf("'%s' 팀원을 삭제합니다.\n", member.getName());
