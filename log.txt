@@ -17,3 +17,8 @@ date
 자동 커밋 푸시 완료
 자동 커밋 푸시 시작 2024-07-25
 
+[main 2d68a57] add 2024-07-25 educations
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+자동 커밋 푸시 완료
+자동 커밋 푸시 시작 2024-07-25
+
