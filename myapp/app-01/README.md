@@ -8,10 +8,10 @@
 - 콘솔로 값을 출력할 수 있다.
 - IntelliJ IDE에서 Gradle 프로젝트를 실행할 수 있다.
 
-## 요구사항 
+## 요구사항
 
 - myapp 폴더를 만들고 자바 프로젝트 폴더로 구성
-- IntelliJ IDE로 프로젝트 가져온 후 실행 
+- IntelliJ IDE로 프로젝트 가져온 후 실행
 
 ## 실행 결과
 
@@ -21,13 +21,17 @@
 
 ## 작업
 
-- 1) myapp 폴더 생성
+-
+    1) myapp 폴더 생성
+
 ```
 $ mkdir myapp
 $ cd myapp
 ```
 
-- 2) 자바 프로젝트 폴더 구성
+-
+    2) 자바 프로젝트 폴더 구성
+
 ```
 $ gradle init
 Select type of build to generate:
@@ -71,7 +75,9 @@ Generate build using new APIs and behavior (some features may change in the next
 
 ```
 
-- 3) 애플리케이션 실행
+-
+    3) 애플리케이션 실행
+
 ```
 $ gradle run
 
@@ -83,20 +89,26 @@ BUILD SUCCESSFUL in 2s
 
 ```
 
-- 4) IntelliJ IDE 로 프로젝트 가져오기
-    - 프로젝트 열기: myapp/settings.gradle 선택 > 프로젝트 열기
-- 5) 애플리케이션 제목을 출력: App.main()
-- 6) 애플리케이션 실행
-    - Gradle 도구: myapp/Tasks/application/run 실행 
+-
+    4) IntelliJ IDE 로 프로젝트 가져오기
 
+    - 프로젝트 열기: myapp/settings.gradle 선택 > 프로젝트 열기
+-
+    5) 애플리케이션 제목을 출력: App.main()
+-
+    6) 애플리케이션 실행
+
+    - Gradle 도구: myapp/Tasks/application/run 실행
 
 ## 변경한 파일
 
 - build.gradle
+
 ```
 application {
-    mainClass = 'bitcamp.myapp.App'
+    mainClass = 'bitcamp.myapp.ClientApp'
 }
 ```
+
 - App.java
 
