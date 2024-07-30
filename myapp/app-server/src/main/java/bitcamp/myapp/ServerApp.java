@@ -8,6 +8,7 @@ import bitcamp.myapp.dao.skel.UserDaoSkel;
 import bitcamp.myapp.listener.InitApplicationListener;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -17,6 +18,10 @@ public class ServerApp {
 
   List<ApplicationListener> listeners = new ArrayList<>();
   ApplicationContext appCtx = new ApplicationContext();
+
+  UserDaoSkel userDaoSkel;
+  ProjectDaoSkel projectDaoSkel;
+  BoardDaoSkel boardDaoSkel;
 
   public static void main(String[] args) {
     ServerApp app = new ServerApp();
@@ -47,45 +52,19 @@ public class ServerApp {
     }
 
     // 서버에서 사용할 Dao Skeleton 객체 준비
-    UserDaoSkel userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
-    ProjectDaoSkel projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
-    BoardDaoSkel boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
+    userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
+    projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
+    boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
 
     System.out.println("서버 프로젝트 관리 시스템 시작!");
 
     try (ServerSocket serverSocket = new ServerSocket(8888)) {
       System.out.println("서버 실행 중...");
 
-      try (Socket socket = serverSocket.accept()) {
-        System.out.println("클라이언트와 연결되었음!");
-
-        ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-        ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-
-        while (true) {
-          String dataName = in.readUTF();
-          if (dataName.equals("quit")) {
-            break;
-          }
-
-          System.out.println(dataName + " 데이터 요청을 처리합니다.");
-
-          switch (dataName) {
-            case "users":
-              userDaoSkel.service(in, out);
-              break;
-            case "projects":
-              projectDaoSkel.service(in, out);
-              break;
-            case "boards":
-              boardDaoSkel.service(in, out);
-              break;
-            default:
-              break;
-          }
-        }
+      while (true) {
+        processRequest(serverSocket.accept());
       }
-
+      
     } catch (Exception e) {
       System.out.println("통신 중 오류 발생!");
       e.printStackTrace();
@@ -101,5 +80,41 @@ public class ServerApp {
         System.out.println("리스너 실행 중 오류 발생!");
       }
     }
+  }
+
+  void processRequest(Socket s) throws Exception {
+
+    String remoteHost = null;
+    int port = 0;
+
+    try (Socket socket = s) {
+      InetSocketAddress addr = (InetSocketAddress) s.getRemoteSocketAddress();
+      remoteHost = addr.getHostString();
+      port = addr.getPort();
+
+      System.out.printf("%s : %d 클라이언트와 연결되었음!", remoteHost, port);
+
+      ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+      ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+
+      String dataName = in.readUTF();
+
+      System.out.println(dataName + " 데이터 요청을 처리합니다.");
+
+      switch (dataName) {
+        case "users":
+          userDaoSkel.service(in, out);
+          break;
+        case "projects":
+          projectDaoSkel.service(in, out);
+          break;
+        case "boards":
+          boardDaoSkel.service(in, out);
+          break;
+        default:
+          break;
+      }
+    }
+
   }
 }

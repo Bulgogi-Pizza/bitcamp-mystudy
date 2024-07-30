@@ -202,3 +202,339 @@ date
 ----------------------------------------
 -----------------------------------------
 자동 커밋 푸시 시작 2024-07-29-18:00:00
+[main f3c190c] add 2024-07-29 educations
+ 337 files changed, 1771 insertions(+), 571 deletions(-)
+ delete mode 100644 java-lang/app/bin/main/.gitignore
+ create mode 100644 java-lang/app/bin/main/study/.DS_Store
+ create mode 100644 java-lang/app/bin/main/study/io/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0130.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0310.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0320.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0321.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0322.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0330.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0410.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0411.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0420.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0430.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0431.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0510.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0520.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0610$1JavaFilter.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0610.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0611$1JavaFilter.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0611.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0620$1JavaFilter.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0620.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0630$1.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0630.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0640$1.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0640.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0650.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0651.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0660.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_01.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_02.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_03.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_04.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_05.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_06.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_07.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0710_08.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0720.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0720_01.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0720_02.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0720_03.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0720_04.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0730$1.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0730.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0731$1.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0731.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex01/Exam0732.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0130.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0310.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0320.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0410.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0420.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0510.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0511.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0512.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0513.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0514.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0520.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0521.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0522.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0523.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0524.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex02/Exam0525.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0111.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0112.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0121.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0122.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0123.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0130.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0221.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0310.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0320.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0410.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0420.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex03/Exam0430.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0310.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0320.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0410.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0420.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0510.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex04/Exam0520.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/DataFileInputStream.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/DataFileOutputStream.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex05/Member.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/BufferedFileInputStream.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/BufferedFileOutputStream.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0130.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0230.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0310.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0320.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex06/Exam0330.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/a/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/a/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/a/Member.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0230$Score.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0230.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0231$Score.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0231.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0232$Score.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Exam0232.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/b/Member.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/c/Exam0310.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/c/Exam0320.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/c/Member.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/d/Exam0410.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/d/Exam0420.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/d/Member.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/e/Exam0510.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/e/Exam0520.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex11/e/Score.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex14/Exam0110.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex14/Exam0120.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex14/Exam0130.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex14/Exam0210.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex14/Exam0220.class
+ create mode 100644 java-lang/app/bin/main/study/io/ex14/Exam0230.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test02.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test05.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test06.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test07.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test08.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test09.class
+ create mode 100644 java-lang/app/bin/main/study/lang/method/Test10.class
+ create mode 100644 java-lang/app/bin/main/study/lang/string/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/lang/string/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/lang/variable/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/lang/variable/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/library/.DS_Store
+ create mode 100644 java-lang/app/bin/main/study/library/apache_poi/.DS_Store
+ create mode 100644 java-lang/app/bin/main/study/library/apache_poi/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/library/apache_poi/Test02.class
+ create mode 100644 java-lang/app/bin/main/study/library/apache_poi/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/library/apache_poi/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05$A.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05$B.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05$C.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05$X.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05$Y.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05$Z.class
+ create mode 100644 java-lang/app/bin/main/study/oop/clazz/Test05.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test01$Player.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test02$1.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test02$Command.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test02.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test03$1.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test03$1MyPlayer.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test03$2.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test03$Player.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test04$1.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test04$1MyCalc.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test04$2.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test04$Calculator.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$1.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$1My.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$2.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$2My.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$3My.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$4My.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$InterestCalculator.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05$My.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test05.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test06$1$1.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test06$Calculator.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test06$MyCalculator.class
+ create mode 100644 java-lang/app/bin/main/study/oop/lambda/Test06.class
+ create mode 100644 java-lang/app/bin/main/study/oop/nested/Test01$Printer.class
+ create mode 100644 java-lang/app/bin/main/study/oop/nested/Test01$Printer2.class
+ create mode 100644 java-lang/app/bin/main/study/oop/nested/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Printer.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Printer2.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Printer3.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Printer4.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Printer5.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Printer6.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Test02.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Test05.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after1/Test06.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/ContentPrinter.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/FooterPrinter.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/HeaderPrinter.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Printer.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/PrinterDecorator.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/SignPrinter.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test02.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test05.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test06.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/after2/Test07.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Printer.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Printer2.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Printer3.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Printer4.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Printer5.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Printer6.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Test01.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Test02.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Test03.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Test04.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Test05.class
+ create mode 100644 java-lang/app/bin/main/study/patterns/ex02/before/Test06.class
+ rename myapp/{app => app-client}/README.md (100%)
+ rename myapp/{app => app-client}/board.data (100%)
+ rename myapp/{app => app-client}/board.json (100%)
+ rename myapp/{app => app-client}/build.gradle (87%)
+ rename myapp/{app => app-client}/data.xlsx (70%)
+ rename myapp/{app => app-client}/data0.xlsx (100%)
+ rename myapp/{app => app-client}/project.data (100%)
+ rename myapp/{app => app-client}/project.json (100%)
+ rename myapp/{app/src/main/java/bitcamp/myapp/App.java => app-client/src/main/java/bitcamp/myapp/ClientApp.java} (59%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/HelpCommand.java (83%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/HistoryCommand.java (85%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/board/BoardAddCommand.java (62%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/board/BoardDeleteCommand.java (71%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/board/BoardListCommand.java (87%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/board/BoardUpdateCommand.java (76%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/board/BoardViewCommand.java (90%)
+ create mode 100644 myapp/app-client/src/main/java/bitcamp/myapp/command/project/ProjectAddCommand.java
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/project/ProjectDeleteCommand.java (88%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/project/ProjectListCommand.java (86%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/project/ProjectMemberHandler.java (59%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/project/ProjectUpdateCommand.java (91%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/project/ProjectViewCommand.java (91%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/user/UserAddCommand.java (59%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/user/UserDeleteCommand.java (67%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/user/UserListCommand.java (86%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/user/UserUpdateCommand.java (76%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/command/user/UserViewCommand.java (88%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/dao/ListBoardDao.java (85%)
+ create mode 100644 myapp/app-client/src/main/java/bitcamp/myapp/dao/ListProjectDao.java
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/dao/MapBoardDao.java (92%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/dao/MapProjectDao.java (87%)
+ rename myapp/{app => app-client}/src/main/java/bitcamp/myapp/listener/InitApplicationListener.java (79%)
+ rename myapp/{app => app-client}/src/main/resources/README.md (100%)
+ rename myapp/{app => app-client}/src/test/java/README.md (100%)
+ rename myapp/{app => app-client}/src/test/resources/README.md (100%)
+ rename myapp/{app => app-client}/user.data (100%)
+ rename myapp/{app => app-client}/user.json (100%)
+ create mode 100644 myapp/app-common/board.data
+ create mode 100644 myapp/app-common/board.json
+ create mode 100644 myapp/app-common/build.gradle
+ create mode 100644 myapp/app-common/project.data
+ create mode 100644 myapp/app-common/project.json
+ rename myapp/{app/src/main/java/bitcamp/myapp => app-common/src/main/java/bitcamp}/command/Command.java (67%)
+ create mode 100644 myapp/app-common/src/main/java/bitcamp/context/ApplicationContext.java
+ create mode 100644 myapp/app-common/src/main/java/bitcamp/listener/ApplicationListener.java
+ rename myapp/{app => app-common}/src/main/java/bitcamp/menu/AbstractMenu.java (100%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/menu/Menu.java (100%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/menu/MenuGroup.java (100%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/menu/MenuItem.java (92%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/menu/TestMenu.java (100%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/myapp/dao/BoardDao.java (100%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/myapp/dao/ProjectDao.java (100%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/myapp/dao/UserDao.java (100%)
+ create mode 100644 myapp/app-common/src/main/java/bitcamp/myapp/dao/stub/BoardDaoStub.java
+ create mode 100644 myapp/app-common/src/main/java/bitcamp/myapp/dao/stub/ProjectDaoStub.java
+ create mode 100644 myapp/app-common/src/main/java/bitcamp/myapp/dao/stub/UserDaoStub.java
+ rename myapp/{app => app-common}/src/main/java/bitcamp/myapp/vo/Board.java (84%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/myapp/vo/Project.java (78%)
+ rename myapp/{app => app-common}/src/main/java/bitcamp/myapp/vo/User.java (100%)
+ create mode 100644 myapp/app-common/src/main/java/bitcamp/net/ResponseStatus.java
+ rename myapp/{app => app-common}/src/main/java/bitcamp/util/Prompt.java (100%)
+ create mode 100644 myapp/app-common/src/main/resources/README.md
+ create mode 100644 myapp/app-common/src/test/java/README.md
+ create mode 100644 myapp/app-common/src/test/resources/README.md
+ create mode 100644 myapp/app-common/user.data
+ create mode 100644 myapp/app-common/user.json
+ create mode 100644 myapp/app-server/board.data
+ create mode 100644 myapp/app-server/board.json
+ create mode 100644 myapp/app-server/build.gradle
+ create mode 100644 myapp/app-server/data.xlsx
+ create mode 100644 myapp/app-server/data0.xlsx
+ create mode 100644 myapp/app-server/project.data
+ create mode 100644 myapp/app-server/project.json
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/ServerApp.java
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/dao/ListBoardDao.java
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/dao/ListProjectDao.java
+ rename myapp/{app => app-server}/src/main/java/bitcamp/myapp/dao/ListUserDao.java (81%)
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/dao/MapBoardDao.java
+ rename myapp/{app/src/main/java/bitcamp/myapp/dao/ListProjectDao.java => app-server/src/main/java/bitcamp/myapp/dao/MapProjectDao.java} (86%)
+ rename myapp/{app => app-server}/src/main/java/bitcamp/myapp/dao/MapUserDao.java (100%)
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/BoardDaoSkel.java
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/ProjectDaoSkel.java
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/UserDaoSkel.java
+ create mode 100644 myapp/app-server/src/main/java/bitcamp/myapp/listener/InitApplicationListener.java
+ create mode 100644 myapp/app-server/src/main/resources/README.md
+ create mode 100644 myapp/app-server/src/test/java/README.md
+ create mode 100644 myapp/app-server/src/test/resources/README.md
+ create mode 100644 myapp/app-server/user.data
+ create mode 100644 myapp/app-server/user.json
+ delete mode 100644 myapp/app/src/main/java/bitcamp/context/ApplicationContext.java
+ delete mode 100644 myapp/app/src/main/java/bitcamp/listener/ApplicationListener.java
+ delete mode 100644 myapp/app/src/main/java/bitcamp/myapp/command/project/ProjectAddCommand.java
+ delete mode 100644 myapp/app/src/main/java/bitcamp/myapp/vo/SequenceNo.java
+자동 커밋 푸시 완료
+----------------------------------------
+-----------------------------------------
+자동 커밋 푸시 시작 2024-07-30-18:00:00
