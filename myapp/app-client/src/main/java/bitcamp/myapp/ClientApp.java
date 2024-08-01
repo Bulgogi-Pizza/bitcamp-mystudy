@@ -30,7 +30,6 @@ public class ClientApp {
   }
 
   void execute() {
-
     try {
       appCtx.setAttribute("host", Prompt.input("서버 주소?"));
       appCtx.setAttribute("port", Prompt.inputInt("포트 번호?"));
@@ -66,4 +65,6 @@ public class ClientApp {
       }
     }
   }
+
+
 }

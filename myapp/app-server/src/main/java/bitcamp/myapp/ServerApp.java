@@ -19,10 +19,6 @@ public class ServerApp {
   List<ApplicationListener> listeners = new ArrayList<>();
   ApplicationContext appCtx = new ApplicationContext();
 
-  UserDaoSkel userDaoSkel;
-  ProjectDaoSkel projectDaoSkel;
-  BoardDaoSkel boardDaoSkel;
-
   public static void main(String[] args) {
     ServerApp app = new ServerApp();
 
@@ -51,20 +47,16 @@ public class ServerApp {
       }
     }
 
-    // 서버에서 사용할 Dao Skeleton 객체 준비
-    userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
-    projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
-    boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
-
     System.out.println("서버 프로젝트 관리 시스템 시작!");
 
     try (ServerSocket serverSocket = new ServerSocket(8888)) {
       System.out.println("서버 실행 중...");
 
       while (true) {
-        processRequest(serverSocket.accept());
+        Socket socket = serverSocket.accept();
+        new Thread(() -> processRequest(socket)).start();
       }
-      
+
     } catch (Exception e) {
       System.out.println("통신 중 오류 발생!");
       e.printStackTrace();
@@ -82,15 +74,19 @@ public class ServerApp {
     }
   }
 
-  void processRequest(Socket s) throws Exception {
-
+  void processRequest(Socket socket) {
     String remoteHost = null;
     int port = 0;
 
-    try (Socket socket = s) {
-      InetSocketAddress addr = (InetSocketAddress) s.getRemoteSocketAddress();
+    try (Socket s = socket) {
+      InetSocketAddress addr = (InetSocketAddress) socket.getRemoteSocketAddress();
       remoteHost = addr.getHostString();
       port = addr.getPort();
+
+      // 클라이언트의 데이터 처리 요청을 수행할 Dao Skeleton 객체 준비
+      UserDaoSkel userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
+      ProjectDaoSkel projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
+      BoardDaoSkel boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
 
       System.out.printf("%s : %d 클라이언트와 연결되었음!", remoteHost, port);
 
@@ -114,7 +110,8 @@ public class ServerApp {
         default:
           break;
       }
+    } catch (Exception e) {
+      System.out.println("오류 발생");
     }
-
   }
 }
