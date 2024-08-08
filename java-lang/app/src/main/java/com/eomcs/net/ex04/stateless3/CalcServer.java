@@ -110,7 +110,7 @@ public class CalcServer {
       // => 스레드를 실행시킨 후 바로 리턴한다.
       requestHandler.start();
       System.out.printf("%s 클라이언트 요청을 스레드에게 맡겼습니다!\n", //
-          remoteA.ddr.getAddress());
+          remoteAddr.getAddress());
 
     }
     // ss.close();
