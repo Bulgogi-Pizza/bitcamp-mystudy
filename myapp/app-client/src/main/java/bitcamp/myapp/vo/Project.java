@@ -15,7 +15,6 @@ public class Project implements Serializable {
   private String startDate;
   private String endDate;
   private List<User> members = new ArrayList<>();
-  ;
 
   public Project() {
   }
@@ -83,5 +82,9 @@ public class Project implements Serializable {
 
   public List<User> getMembers() {
     return members;
+  }
+
+  public void setMembers(List<User> members) {
+    this.members = members;
   }
 }

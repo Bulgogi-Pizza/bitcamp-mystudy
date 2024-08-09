@@ -21,8 +21,8 @@ public class BoardDaoSkel {
   public void service(ObjectInputStream in, ObjectOutputStream out) throws Exception {
     String command = in.readUTF();
 
-    Board board;
-    int no;
+    Board board = null;
+    int no = 0;
 
     switch (command) {
       case "insert":
@@ -68,4 +68,5 @@ public class BoardDaoSkel {
 
     out.flush();
   }
+
 }

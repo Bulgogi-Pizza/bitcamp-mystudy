@@ -30,15 +30,18 @@ public class ClientApp {
   }
 
   void execute() {
+
     try {
-      appCtx.setAttribute("host", Prompt.input("서버 주소?"));
-      appCtx.setAttribute("port", Prompt.inputInt("포트 번호?"));
+      appCtx.setAttribute("url", "jdbc:mysql://localhost/studydb");//Prompt.input("DBMS URL?"));
+      appCtx.setAttribute("username", "study");//Prompt.input("아이디?"));
+      appCtx.setAttribute("password", "1122");//Prompt.input("암호?"));
 
       // 애플리케이션이 시작될 때 리스너에게 알린다.
       for (ApplicationListener listener : listeners) {
         try {
           listener.onStart(appCtx);
         } catch (Exception e) {
+          e.printStackTrace();
           System.out.println("리스너 실행 중 오류 발생!");
         }
       }
@@ -65,6 +68,4 @@ public class ClientApp {
       }
     }
   }
-
-
 }

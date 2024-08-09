@@ -21,8 +21,8 @@ public class UserDaoSkel {
   public void service(ObjectInputStream in, ObjectOutputStream out) throws Exception {
     String command = in.readUTF();
 
-    User user;
-    int no;
+    User user = null;
+    int no = 0;
 
     switch (command) {
       case "insert":
@@ -31,7 +31,7 @@ public class UserDaoSkel {
         out.writeUTF(SUCCESS);
         break;
       case "list":
-        Thread.sleep(30000);
+        //Thread.sleep(30000);
         List<User> list = userDao.list();
         out.writeUTF(SUCCESS);
         out.writeObject(list);
@@ -69,4 +69,5 @@ public class UserDaoSkel {
 
     out.flush();
   }
+
 }

@@ -21,8 +21,8 @@ public class ProjectDaoSkel {
   public void service(ObjectInputStream in, ObjectOutputStream out) throws Exception {
     String command = in.readUTF();
 
-    Project project;
-    int no;
+    Project project = null;
+    int no = 0;
 
     switch (command) {
       case "insert":
@@ -68,4 +68,5 @@ public class ProjectDaoSkel {
 
     out.flush();
   }
+
 }
