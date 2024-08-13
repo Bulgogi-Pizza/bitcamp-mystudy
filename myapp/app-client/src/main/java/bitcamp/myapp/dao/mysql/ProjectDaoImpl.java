@@ -101,14 +101,12 @@ public class ProjectDaoImpl implements ProjectDao {
               + " title='%s',"
               + " description='%s',"
               + " start_date='%s',"
-              + " end_date='%s',"
-              + " members='%s'"
+              + " end_date='%s'"
               + " where project_id=%d",
           project.getTitle(),
           project.getDescription(),
           project.getStartDate(),
           project.getEndDate(),
-          memberNoList,
           project.getNo()));
       return count > 0;
     }
