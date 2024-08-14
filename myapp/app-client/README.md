@@ -1,14 +1,16 @@
-# 40. DBMS 도입하기
+# 42. 로그인/로그아웃 적용하기
 
 ## 학습목표
 
-- JDBC API와 JDBC Driver의 관계를 설명할 수 있다.
-- JDBC 드라이버의 각 타입에 따라 동작하는 과정과 특징을 설명할 수 있다.
-- JDBC API를 사용하여 DB의 데이터에 접근할 수 있다.
+- .properties 파일의 프로퍼티 값을 읽을 수 있다.
+- 로그인/로그아웃을 구현할 수 있다.
+- 로그인 정보를 이용하여 데이터를 다룰 수 있다.
 
 ## 요구사항
 
-- DBMS를 사용하여 데이터를 저장하라.
+- 애플리케이션의 설정 정보를 .properties 파일에 보관하라.
+- 로그인/로그아웃을 구현하라.
+- 게시글을 입력/변경/삭제할 때 로그인 사용자의 정보를 활용하라.
 
 ## 실행 결과
 
@@ -16,21 +18,16 @@
 
 ## 작업
 
-- 데이터베이스에 테이블 생성 및 예제 데이터 입력
-  - myapp_users, myapp_projects, myapp_boards 테이블 생성
-  - 예제 데이터 입력
-- MySQL JDBC Type4 드라이버 설정
-  - build.gradle 변경
-- DAO 구현체 생성 및 적용
-  - UserDaoImpl 클래스 정의
-  - BoardDaoImpl 클래스 정의
-    - findBy()에서 날짜를 꺼낼 때 getTimestamp()를 사용
-  - ProjectDaoImpl 클래스 정의
-    - ProjectDao 인터페이스 변경
-  - InitApplicationListener 변경
-- 도메인 클래스 변경
-  - Project 클래스 변경
-    - 시작일, 종료일 타입을 String에서 java.sql.Date 으로 변경 
+- JDBC 접속 정보를 .properties 파일에 저장
+  - app.properties 파일 생성
+  - InitApplicationListener에서 app.properties 파일의 설정 정보를 로딩하여 사용
+- 로그인 기능 구현
+  - AuthApplicationListener 에서 로그인을 구현
+- 게시글에 로그인 사용자 정보 추가
+  - myapp_boards 테이블 변경 및 예제 데이터 변경
+  - Board 클래스 변경
+  - BoardDaoImpl 클래스 변경
+  - BoardListCommand 클래스 변경
 
 ## 소스 파일
 

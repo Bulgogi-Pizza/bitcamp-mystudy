@@ -7,10 +7,11 @@ import java.util.Objects;
 public class Board implements Serializable {
 
   private static final long serialVersionUID = 1L;
- 
+
   private int no;
   private String title;
   private String content;
+  private User writer;
   private Date createdDate;
   private int viewCount;
 
@@ -87,5 +88,13 @@ public class Board implements Serializable {
 
   public void setViewCount(int viewCount) {
     this.viewCount = viewCount;
+  }
+
+  public User getWriter() {
+    return writer;
+  }
+
+  public void setWriter(User writer) {
+    this.writer = writer;
   }
 }

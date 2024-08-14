@@ -20,6 +20,7 @@ create table myapp_boards (
   board_id int not null,
   title varchar(255) not null,
   content text not null,
+  user_id int not null,
   created_date datetime default now(),
   view_count int default 0
 );
@@ -28,13 +29,15 @@ alter table myapp_boards
   add constraint primary key (board_id),
   modify column board_id int not null auto_increment;
 
+alter table myapp_boards
+  add constraint myapp_boards_fk foreign key (user_id) references myapp_users(user_id);
 
 create table myapp_projects (
   project_id int not null,
   title varchar(255) not null,
   description text not null,
-  start_date date not null, -- 예) 'yyyy-MM-dd'
-  end_date date not null -- 예) 'yyyy-MM-dd'
+  start_date date not null,
+  end_date date not null
 );
 
 alter table myapp_projects
@@ -50,3 +53,12 @@ alter table myapp_project_members
   add constraint myapp_project_members_fk1 foreign key (user_id) references myapp_users (user_id),
   add constraint myapp_project_members_fk2 foreign key (project_id) references myapp_projects (project_id),
   add constraint primary key (user_id, project_id);
+
+
+
+
+
+
+
+
+
