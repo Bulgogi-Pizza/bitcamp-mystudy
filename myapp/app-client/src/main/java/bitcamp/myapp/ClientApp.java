@@ -42,6 +42,7 @@ public class ClientApp {
             return;
           }
         } catch (Exception e) {
+          e.printStackTrace();
           System.out.println("리스너 실행 중 오류 발생!");
         }
       }
@@ -64,6 +65,7 @@ public class ClientApp {
       try {
         listener.onShutdown(appCtx);
       } catch (Exception e) {
+        e.printStackTrace();
         System.out.println("리스너 실행 중 오류 발생!");
       }
     }
