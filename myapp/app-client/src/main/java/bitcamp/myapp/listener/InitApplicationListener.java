@@ -1,6 +1,5 @@
 package bitcamp.myapp.listener;
 
-import bitcamp.bitbatis.SqlSession;
 import bitcamp.context.ApplicationContext;
 import bitcamp.listener.ApplicationListener;
 import bitcamp.menu.MenuGroup;
@@ -29,10 +28,12 @@ import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.dao.mysql.BoardDaoImpl;
 import bitcamp.myapp.dao.mysql.ProjectDaoImpl;
 import bitcamp.myapp.dao.mysql.UserDaoImpl;
-import java.io.FileReader;
+import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.Properties;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class InitApplicationListener implements ApplicationListener {
 
@@ -41,22 +42,14 @@ public class InitApplicationListener implements ApplicationListener {
   @Override
   public boolean onStart(ApplicationContext ctx) throws Exception {
 
-    Properties props = new Properties();
-    props.load(new FileReader("app.properties"));
-
-    String url = props.getProperty("jdbc.url");
-    String username = props.getProperty("jdbc.username");
-    String password = props.getProperty("jdbc.password");
-
-    // JDBC Connection 객체 준비
-    // => DBMS에 연결
-    con = DriverManager.getConnection(url, username, password);
-
-    SqlSession sqlSession = new SqlSession(con);
+    InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+    SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
+    SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
+    SqlSession sqlSession = sqlSessionFactory.openSession(false);
 
     UserDao userDao = new UserDaoImpl(sqlSession);
-    BoardDao boardDao = new BoardDaoImpl(sqlSession);
-    ProjectDao projectDao = new ProjectDaoImpl(con);
+    BoardDao boardDao = new BoardDaoImpl(null);
+    ProjectDao projectDao = new ProjectDaoImpl(null);
 
     ctx.setAttribute("userDao", userDao);
     ctx.setAttribute("boardDao", boardDao);
@@ -65,11 +58,11 @@ public class InitApplicationListener implements ApplicationListener {
     MenuGroup mainMenu = ctx.getMainMenu();
 
     MenuGroup userMenu = new MenuGroup("회원");
-    userMenu.add(new MenuItem("등록", new UserAddCommand(userDao)));
+    userMenu.add(new MenuItem("등록", new UserAddCommand(userDao, sqlSession)));
     userMenu.add(new MenuItem("목록", new UserListCommand(userDao)));
     userMenu.add(new MenuItem("조회", new UserViewCommand(userDao)));
-    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userDao)));
-    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userDao)));
+    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userDao, sqlSession)));
+    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userDao, sqlSession)));
     mainMenu.add(userMenu);
 
     MenuGroup projectMenu = new MenuGroup("프로젝트");
