@@ -12,6 +12,7 @@ public class UserDeleteCommand implements Command {
   private SqlSession sqlSession;
 
   public UserDeleteCommand(UserDao userDao, SqlSession sqlSession) {
+
     this.userDao = userDao;
     this.sqlSession = sqlSession;
   }
@@ -29,12 +30,12 @@ public class UserDeleteCommand implements Command {
       }
 
       userDao.delete(userNo);
-      System.out.printf("'%s' 회원을 삭제 했습니다.\n", deletedUser.getName());
       sqlSession.commit();
+      System.out.printf("'%s' 회원을 삭제 했습니다.\n", deletedUser.getName());
 
     } catch (Exception e) {
-      System.out.println("삭제 중 오류 발생!");
       sqlSession.rollback();
+      System.out.println("삭제 중 오류 발생!");
     }
   }
 }

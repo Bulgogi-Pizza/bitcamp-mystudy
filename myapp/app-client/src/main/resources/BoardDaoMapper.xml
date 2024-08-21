@@ -2,24 +2,41 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="boardDao">
-    <select id="list" resultType="bitcamp.myapp.vo.User">
+<mapper namespace="BoardDao">
+
+    <resultMap id="BoardMap" type="bitcamp.myapp.vo.Board">
+        <id column="board_id" property="no"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="create_date" property="createdDate"/>
+        <result column="view_count" property="viewCount"/>
+
+        <association property="writer" javaType="bitcamp.myapp.vo.User">
+            <id column="user_id" property="no"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+
+    <select id="list" resultMap="BoardMap">
         select
-            user_id as no,
-            name,
-            email
+            b.board_id,
+            b.title,
+            b.created_date,
+            b.view_count,
+            u.user_id,
+            u.name
         from
-            myapp_users
+            myapp_boards b inner join myapp_users u in b.user_id=u.user_id
         order by
-            user_id asc
+            b.board_id asc
     </select>
 
-    <insert id="insert" parameterType="bitcamp.myapp.vo.User">
-        insert into myapp_users(name, email, pwd, tel)
-        values (#{name}, #{email}, sha1(#{password}), #{tel})
+    <insert id="insert" parameterType="bitcamp.myapp.vo.Board">
+        insert into myapp_boards(title, content, user_id)
+        values (#{title}, #{content}, #{writer.no})
     </insert>
 
-    <select id="findBy" resultType="bitcamp.myapp.vo.User" parameterType="int">
+    <select id="findBy" resultMap="BoardMap" parameterType="int">
         select
             user_id as no,
             name,

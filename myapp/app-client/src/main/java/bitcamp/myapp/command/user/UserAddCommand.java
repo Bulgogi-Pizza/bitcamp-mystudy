@@ -12,6 +12,7 @@ public class UserAddCommand implements Command {
   private SqlSession sqlSession;
 
   public UserAddCommand(UserDao userDao, SqlSession sqlSession) {
+
     this.userDao = userDao;
     this.sqlSession = sqlSession;
   }
@@ -28,9 +29,10 @@ public class UserAddCommand implements Command {
 
       userDao.insert(user);
       sqlSession.commit();
+
     } catch (Exception e) {
-      System.out.println("등록 중 오류 발생!");
       sqlSession.rollback();
+      System.out.println("등록 중 오류 발생!");
     }
   }
 }

@@ -12,6 +12,7 @@ public class UserUpdateCommand implements Command {
   private SqlSession sqlSession;
 
   public UserUpdateCommand(UserDao userDao, SqlSession sqlSession) {
+
     this.userDao = userDao;
     this.sqlSession = sqlSession;
   }
@@ -34,12 +35,12 @@ public class UserUpdateCommand implements Command {
       user.setTel(Prompt.input("연락처(%s)?", user.getTel()));
 
       userDao.update(user);
-      System.out.println("변경 했습니다.");
       sqlSession.commit();
+      System.out.println("변경 했습니다.");
 
     } catch (Exception e) {
-      System.out.println("변경 중 오류 발생!");
       sqlSession.rollback();
+      System.out.println("변경 중 오류 발생!");
     }
   }
 
