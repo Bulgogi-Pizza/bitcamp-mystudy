@@ -106,7 +106,7 @@ BUILD SUCCESSFUL in 2s
 
 ```
 application {
-    mainClass = 'bitcamp.myapp.ClientApp'
+    mainClass = 'bitcamp.myapp.ServerApp'
 }
 ```
 

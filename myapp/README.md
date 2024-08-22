@@ -190,7 +190,7 @@
 
 - java.util 패키지에서 제공하는 컬렉션 API로 교체
 
-## 30. 리팩토링: bitcamp.myapp.ClientApp.App 클래스
+## 30. 리팩토링: bitcamp.myapp.ServerApp.App 클래스
 
 - main() 메서드에 들어 있는 코드를 기능에 따라 묶어 여러 메서드로 분리
 - 공유하는 변수는 인스턴스 필드로 전환
@@ -518,7 +518,7 @@
 - @Transactional 사용법
     - @EnableTransactionManagement 용도 이해
 - @Transactional이 붙은 메서드의 구동 원리 이해
-    -
+  -
         - 프록시 패턴 기술을 사용하여 트랜잭션 코드를 삽입
 
 ## 81. DAO 구현체 자동 생성하기
