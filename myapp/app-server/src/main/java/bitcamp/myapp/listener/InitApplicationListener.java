@@ -54,30 +54,30 @@ public class InitApplicationListener implements ApplicationListener {
     MenuGroup mainMenu = ctx.getMainMenu();
 
     MenuGroup userMenu = new MenuGroup("회원");
-    userMenu.add(new MenuItem("등록", new UserAddCommand(userDao, sqlSession)));
+    userMenu.add(new MenuItem("등록", new UserAddCommand(userDao, sqlSessionFactory)));
     userMenu.add(new MenuItem("목록", new UserListCommand(userDao)));
     userMenu.add(new MenuItem("조회", new UserViewCommand(userDao)));
-    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userDao, sqlSession)));
-    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userDao, sqlSession)));
+    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userDao, sqlSessionFactory)));
+    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userDao, sqlSessionFactory)));
     mainMenu.add(userMenu);
 
     MenuGroup projectMenu = new MenuGroup("프로젝트");
     ProjectMemberHandler memberHandler = new ProjectMemberHandler(userDao);
     projectMenu.add(
-        new MenuItem("등록", new ProjectAddCommand(projectDao, memberHandler, sqlSession)));
+        new MenuItem("등록", new ProjectAddCommand(projectDao, memberHandler, sqlSessionFactory)));
     projectMenu.add(new MenuItem("목록", new ProjectListCommand(projectDao)));
     projectMenu.add(new MenuItem("조회", new ProjectViewCommand(projectDao)));
     projectMenu.add(
-        new MenuItem("변경", new ProjectUpdateCommand(projectDao, memberHandler, sqlSession)));
-    projectMenu.add(new MenuItem("삭제", new ProjectDeleteCommand(projectDao, sqlSession)));
+        new MenuItem("변경", new ProjectUpdateCommand(projectDao, memberHandler, sqlSessionFactory)));
+    projectMenu.add(new MenuItem("삭제", new ProjectDeleteCommand(projectDao, sqlSessionFactory)));
     mainMenu.add(projectMenu);
 
     MenuGroup boardMenu = new MenuGroup("게시판");
-    boardMenu.add(new MenuItem("등록", new BoardAddCommand(boardDao, ctx, sqlSession)));
+    boardMenu.add(new MenuItem("등록", new BoardAddCommand(boardDao, sqlSessionFactory)));
     boardMenu.add(new MenuItem("목록", new BoardListCommand(boardDao)));
-    boardMenu.add(new MenuItem("조회", new BoardViewCommand(boardDao, sqlSession)));
-    boardMenu.add(new MenuItem("변경", new BoardUpdateCommand(boardDao, ctx, sqlSession)));
-    boardMenu.add(new MenuItem("삭제", new BoardDeleteCommand(boardDao, ctx, sqlSession)));
+    boardMenu.add(new MenuItem("조회", new BoardViewCommand(boardDao, sqlSessionFactory)));
+    boardMenu.add(new MenuItem("변경", new BoardUpdateCommand(boardDao, sqlSessionFactory)));
+    boardMenu.add(new MenuItem("삭제", new BoardDeleteCommand(boardDao, sqlSessionFactory)));
     mainMenu.add(boardMenu);
 
     mainMenu.add(new MenuItem("도움말", new HelpCommand()));

@@ -10,10 +10,10 @@ public class Exam0110 {
     //    ClassLoader classLoader = clazz.getClassLoader();
     //    Class<?>[] interfaceTypes = new Class<?>[] {MyInterface.class};
     //    InvocationHandler invocationHandler = new MyInvocationHandler();
-    //    
+    //
     //    MyInterface obj = (MyInterface) Proxy.newProxyInstance(
-    //        classLoader, 
-    //        interfaceTypes, 
+    //        classLoader,
+    //        interfaceTypes,
     //        invocationHandler);
 
     MyInterface obj = (MyInterface) Proxy.newProxyInstance(
