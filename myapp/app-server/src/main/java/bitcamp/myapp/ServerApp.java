@@ -13,8 +13,6 @@ import java.util.List;
 
 public class ServerApp {
 
-  private static final String GOODBYE = "<[goodbye!]>";
-
   List<ApplicationListener> listeners = new ArrayList<>();
   ApplicationContext appCtx = new ApplicationContext();
 
@@ -37,7 +35,8 @@ public class ServerApp {
     listeners.remove(listener);
   }
 
-  void execute() throws Exception {
+  private void execute() throws Exception {
+
     for (ApplicationListener listener : listeners) {
       try {
         if (!listener.onStart(appCtx)) {
@@ -56,6 +55,15 @@ public class ServerApp {
     while (true) {
       service(serverSocket.accept());
     }
+
+    // 애플리케이션이 종료될 때 리스너에게 알린다.
+//    for (ApplicationListener listener : listeners) {
+//      try {
+//        listener.onShutdown(appCtx);
+//      } catch (Exception e) {
+//        System.out.println("리스너 실행 중 오류 발생!");
+//      }
+//    }
   }
 
   private void service(Socket socket) {
@@ -65,27 +73,28 @@ public class ServerApp {
 
         prompt.println("[프로젝트 관리 시스템]");
         String email = prompt.input("이메일?");
-        String password = prompt.input("비밀번호?");
+        String password = prompt.input("암호?");
 
         UserDao userDao = (UserDao) appCtx.getAttribute("userDao");
         User loginUser = userDao.findByEmailAndPassword(email, password);
         if (loginUser == null) {
           prompt.println("이메일 또는 암호가 맞지 않습니다!");
-          prompt.print(GOODBYE);
+          prompt.print("<[goodbye!]>");
           prompt.end();
           prompt.close();
           return;
         }
 
+        // 로그인 정보를 보관해 둔다.
         prompt.setAttribute("loginUser", loginUser);
 
         appCtx.getMainMenu().execute(prompt);
-        prompt.print(GOODBYE);
+        prompt.print("<[goodbye!]>");
         prompt.end();
         prompt.close();
-      } catch (Exception ex) {
+      } catch (Exception e) {
         System.out.println("실행 오류!");
-        ex.printStackTrace();
+        e.printStackTrace();
       }
     }).start();
   }

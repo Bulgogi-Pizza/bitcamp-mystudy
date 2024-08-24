@@ -1,6 +1,7 @@
 package bitcamp.myapp;
 
 import bitcamp.util.Prompt;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
@@ -15,12 +16,12 @@ public class ClientApp {
   }
 
   void execute() {
-    String host = Prompt.input("서버?");
-    int port = Prompt.inputInt("포트?");
+    String host = Prompt.input("서버? ");
+    int port = Prompt.inputInt("포트번호? ");
 
     try (Socket socket = new Socket(host, port);
-        DataInputStream in = new DataInputStream(socket.getInputStream());
-        DataOutputStream out = new DataOutputStream(socket.getOutputStream())) {
+         DataInputStream in = new DataInputStream(socket.getInputStream());
+         DataOutputStream out = new DataOutputStream(socket.getOutputStream())) {
 
       while (true) {
         String message = in.readUTF();

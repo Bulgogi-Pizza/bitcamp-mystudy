@@ -1,7 +1,6 @@
 package bitcamp.myapp.command.board;
 
 import bitcamp.command.Command;
-import bitcamp.context.ApplicationContext;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.User;
@@ -11,12 +10,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 public class BoardUpdateCommand implements Command {
 
   private BoardDao boardDao;
-  private ApplicationContext ctx;
   private SqlSessionFactory sqlSessionFactory;
 
   public BoardUpdateCommand(BoardDao boardDao, SqlSessionFactory sqlSessionFactory) {
+
     this.boardDao = boardDao;
-    this.ctx = ctx;
     this.sqlSessionFactory = sqlSessionFactory;
   }
 

@@ -1,6 +1,7 @@
 package bitcamp.net;
 
 import bitcamp.context.ApplicationContext;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.PrintWriter;
@@ -25,7 +26,7 @@ public class Prompt {
   // 서버에서 출력하는 것을 임시 보관하는 역할
   private StringWriter strWriter = new StringWriter();
 
-  // StringWriter에 문자열을 다양한 형식으로 출력할 수 있도록 도와주는 데코레이터
+  // 문자열을 다양한 형식으로 출력할 있도록 도와주는 데코레이터
   // 이 객체를 사용하여 출력한 내용은 모두 위의 StringWriter에 보관된다.
   private PrintWriter printWriter = new PrintWriter(strWriter);
 
@@ -77,10 +78,10 @@ public class Prompt {
   }
 
   public void end() throws Exception {
-    // 현재까지 출력한 내용을 strWriter에서 꺼냄
+    // 현재까지 출력한 내용을 꺼낸다.
     String message = strWriter.toString();
 
-    // 클라이언트로 전송
+    // 클라이언트로 전송한다.
     out.writeUTF(message);
     out.flush();
 
@@ -92,20 +93,16 @@ public class Prompt {
     try {
       in.close();
     } catch (Exception e) {
-
     }
-
     try {
       out.close();
     } catch (Exception e) {
-
     }
-
     try {
       socket.close();
     } catch (Exception e) {
-
     }
-
   }
+
+
 }

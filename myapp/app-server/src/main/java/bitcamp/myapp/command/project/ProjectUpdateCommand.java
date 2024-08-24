@@ -12,8 +12,10 @@ public class ProjectUpdateCommand implements Command {
   private ProjectMemberHandler memberHandler;
   private SqlSessionFactory sqlSessionFactory;
 
-  public ProjectUpdateCommand(ProjectDao projectDao, ProjectMemberHandler memberHandler,
-      SqlSessionFactory sqlSessionFactory) {
+  public ProjectUpdateCommand(ProjectDao projectDao,
+                              ProjectMemberHandler memberHandler,
+                              SqlSessionFactory sqlSessionFactory) {
+
     this.projectDao = projectDao;
     this.memberHandler = memberHandler;
     this.sqlSessionFactory = sqlSessionFactory;

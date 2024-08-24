@@ -1,6 +1,7 @@
 package bitcamp.menu;
 
 import bitcamp.net.Prompt;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -46,11 +47,7 @@ public class MenuGroup extends AbstractMenu {
       }
     } catch (Exception e) {
       e.printStackTrace();
-      try {
-        prompt.println("실행 오류!");
-      } catch (Exception e2) {
-        e2.printStackTrace();
-      }
+      prompt.println("실행 오류!");
     }
   }
 
