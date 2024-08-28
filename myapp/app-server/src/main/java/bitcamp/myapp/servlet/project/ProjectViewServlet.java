@@ -1,6 +1,7 @@
-package bitcamp.myapp.servlet.user;
+package bitcamp.myapp.servlet.project;
 
-import bitcamp.myapp.dao.UserDao;
+import bitcamp.myapp.dao.ProjectDao;
+import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 
 import javax.servlet.GenericServlet;
@@ -11,15 +12,15 @@ import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/user/view")
-public class UserViewServlet extends GenericServlet {
+@WebServlet("/project/view")
+public class ProjectViewServlet extends GenericServlet {
 
-  private UserDao userDao;
+  private ProjectDao projectDao;
 
   @Override
   public void init() throws ServletException {
     // 서블릿 컨테이너 ---> init(ServletConfig) ---> init() 호출한다.
-    userDao = (UserDao) this.getServletContext().getAttribute("userDao");
+    projectDao = (ProjectDao) this.getServletContext().getAttribute("projectDao");
   }
 
   @Override
@@ -41,21 +42,28 @@ public class UserViewServlet extends GenericServlet {
       out.println("  <a href='/'><img src='/images/home.png'></a>");
       out.println("        프로젝트 관리 시스템");
       out.println("</header>");
-      out.println("<h1>회원 조회</h1>");
+      out.println("<h1>프로젝트 조회</h1>");
 
-      int userNo = Integer.parseInt(req.getParameter("no"));
+      int projectNo = Integer.parseInt(req.getParameter("no"));
 
-      User user = userDao.findBy(userNo);
-      if (user == null) {
-        out.println("<p>없는 회원입니다.</p>");
+      Project project = projectDao.findBy(projectNo);
+      if (project == null) {
+        out.println("<p>없는 프로젝트입니다.</p>");
         out.println("</body>");
         out.println("</html>");
         return;
       }
 
-      out.printf("<p>이름: %s</p>\n", user.getName());
-      out.printf("<p>이메일: %s</p>\n", user.getEmail());
-      out.printf("<p>연락처: %s</p>\n", user.getTel());
+      out.printf("<p>프로젝트명: %s</p>\n", project.getTitle());
+      out.printf("<p>설명: %s</p>\n", project.getDescription());
+      out.printf("<p>기간: %s ~ %s</p>\n", project.getStartDate(), project.getEndDate());
+
+      out.println("<p>팀원:</p>");
+      out.println("<ul>");
+      for (User user : project.getMembers()) {
+        out.printf("<li>%s</li>\n", user.getName());
+      }
+      out.println("</ul>");
 
     } catch (Exception e) {
       out.println("<p>조회 중 오류 발생!</p>");

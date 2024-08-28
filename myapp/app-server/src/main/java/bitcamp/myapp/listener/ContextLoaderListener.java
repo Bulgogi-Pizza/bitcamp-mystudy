@@ -5,16 +5,17 @@ import bitcamp.myapp.dao.DaoFactory;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.mybatis.SqlSessionFactoryProxy;
-import java.io.InputStream;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-@WebListener
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+import java.io.InputStream;
+
+@WebListener // 서블릿 컨테이너에 이 클래스를 배치하는 태그다.
 public class ContextLoaderListener implements ServletContextListener {
 
   @Override
@@ -36,6 +37,7 @@ public class ContextLoaderListener implements ServletContextListener {
       ProjectDao projectDao = daoFactory.createObject(ProjectDao.class);
 
       ServletContext ctx = sce.getServletContext();
+      ctx.setAttribute("sqlSessionFactory", sqlSessionFactoryProxy);
       ctx.setAttribute("userDao", userDao);
       ctx.setAttribute("boardDao", boardDao);
       ctx.setAttribute("projectDao", projectDao);
@@ -45,4 +47,5 @@ public class ContextLoaderListener implements ServletContextListener {
       e.printStackTrace();
     }
   }
+
 }

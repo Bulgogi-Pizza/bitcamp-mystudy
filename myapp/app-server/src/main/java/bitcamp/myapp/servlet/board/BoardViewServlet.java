@@ -1,7 +1,8 @@
-package bitcamp.myapp.servlet.user;
+package bitcamp.myapp.servlet.board;
 
-import bitcamp.myapp.dao.UserDao;
-import bitcamp.myapp.vo.User;
+import bitcamp.myapp.dao.BoardDao;
+import bitcamp.myapp.vo.Board;
+import org.apache.ibatis.session.SqlSessionFactory;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
@@ -11,15 +12,17 @@ import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/user/view")
-public class UserViewServlet extends GenericServlet {
+@WebServlet("/board/view")
+public class BoardViewServlet extends GenericServlet {
 
-  private UserDao userDao;
+  private BoardDao boardDao;
+  private SqlSessionFactory sqlSessionFactory;
 
   @Override
   public void init() throws ServletException {
     // 서블릿 컨테이너 ---> init(ServletConfig) ---> init() 호출한다.
-    userDao = (UserDao) this.getServletContext().getAttribute("userDao");
+    boardDao = (BoardDao) this.getServletContext().getAttribute("boardDao");
+    sqlSessionFactory = (SqlSessionFactory) this.getServletContext().getAttribute("sqlSessionFactory");
   }
 
   @Override
@@ -41,24 +44,32 @@ public class UserViewServlet extends GenericServlet {
       out.println("  <a href='/'><img src='/images/home.png'></a>");
       out.println("        프로젝트 관리 시스템");
       out.println("</header>");
-      out.println("<h1>회원 조회</h1>");
+      out.println("<h1>게시글 조회</h1>");
 
-      int userNo = Integer.parseInt(req.getParameter("no"));
+      int boardNo = Integer.parseInt(req.getParameter("no"));
 
-      User user = userDao.findBy(userNo);
-      if (user == null) {
-        out.println("<p>없는 회원입니다.</p>");
+      Board board = boardDao.findBy(boardNo);
+      if (board == null) {
+        out.println("<p>없는 게시글입니다.</p>");
         out.println("</body>");
         out.println("</html>");
         return;
       }
 
-      out.printf("<p>이름: %s</p>\n", user.getName());
-      out.printf("<p>이메일: %s</p>\n", user.getEmail());
-      out.printf("<p>연락처: %s</p>\n", user.getTel());
+      board.setViewCount(board.getViewCount() + 1);
+      boardDao.updateViewCount(board.getNo(), board.getViewCount());
+      sqlSessionFactory.openSession(false).commit();
+
+      out.printf("<p>제목: %s</p>\n", board.getTitle());
+      out.printf("<p>내용: %s</p>\n", board.getContent());
+      out.printf("<p>작성일: %1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS</p>\n", board.getCreatedDate());
+      out.printf("<p>조회수: %d</p>\n", board.getViewCount());
+      out.printf("<p>작성자: %s</p>\n", board.getWriter().getName());
 
     } catch (Exception e) {
+      sqlSessionFactory.openSession(false).rollback();
       out.println("<p>조회 중 오류 발생!</p>");
+      e.printStackTrace();
     }
 
     out.println("</body>");
