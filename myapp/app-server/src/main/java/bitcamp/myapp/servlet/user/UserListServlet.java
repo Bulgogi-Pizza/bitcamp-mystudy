@@ -2,11 +2,16 @@ package bitcamp.myapp.servlet.user;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-
-import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/user/list")
 public class UserListServlet implements Servlet {
@@ -25,7 +30,8 @@ public class UserListServlet implements Servlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res)
+      throws ServletException, IOException {
     // 웹브라우저에서 이 서블릿을 실행해달라고 요청이 들어오면 이 메서드가 호출된다.
     // 누가 호출하는가? 서블릿 컨테이너가 호출한다.
 
@@ -37,22 +43,14 @@ public class UserListServlet implements Servlet {
     // 만약 UTF-16BE 에 있는 문자가 ISO-8859-1에 정의되어 있지 않다면,
     // '?' 문자로 변환된다.
     PrintWriter out = res.getWriter();
-    out.println("<!DOCTYPE html>");
-    out.println("<html>");
-    out.println("<head>");
-    out.println("    <meta charset='UTF-8'>");
-    out.println("    <title>Title</title>");
-    out.println("    <link href='/css/common.css' rel='stylesheet'>");
-    out.println("</head>");
-    out.println("<body>");
+
+    // 웹 페이지를 만들 때 앞 공통 부분은 HeaderServlet에게 맡긴다.
+    RequestDispatcher 요청배달자 = req.getRequestDispatcher("/header");
+    요청배달자.include(req, res); // HeaderServlet의 service()를 호출함.
 
     try {
-      out.println("<header>");
-      out.println("  <a href='/'><img src='/images/home.png'></a>");
-      out.println("        프로젝트 관리 시스템");
-      out.println("</header>");
       out.println("<h1>회원 목록</h1>");
-      out.println("<p><a href='/user/form.html'>새 회원</a></p>");
+      out.println("<p><a href='/user/form'>새 회원</a></p>");
       out.println("<table>");
       out.println("  <thead>");
       out.println("      <tr><th>번호</th><th>이름</th><th>이메일</th></tr>");
@@ -60,8 +58,9 @@ public class UserListServlet implements Servlet {
       out.println("  <tbody>");
 
       for (User user : userDao.list()) {
-        out.printf("      <tr><td>%d</td><td><a href='/user/view?no=%1$d'>%s</a></td><td>%s</td></tr>\n",
-                user.getNo(), user.getName(), user.getEmail());
+        out.printf(
+            "      <tr><td>%d</td><td><a href='/user/view?no=%1$d'>%s</a></td><td>%s</td></tr>\n",
+            user.getNo(), user.getName(), user.getEmail());
       }
 
       out.println("  </tbody>");
