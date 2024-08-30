@@ -3,18 +3,15 @@ package bitcamp.myapp.servlet.project;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.ArrayList;
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 @WebServlet("/project/add")
 public class ProjectAddServlet extends GenericServlet {
@@ -30,8 +27,7 @@ public class ProjectAddServlet extends GenericServlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
-      throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 

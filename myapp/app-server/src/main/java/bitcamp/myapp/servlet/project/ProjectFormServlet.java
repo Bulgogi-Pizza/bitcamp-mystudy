@@ -2,14 +2,15 @@ package bitcamp.myapp.servlet.project;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
+
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/project/form")
 public class ProjectFormServlet extends GenericServlet {
@@ -22,8 +23,7 @@ public class ProjectFormServlet extends GenericServlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
-      throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 
@@ -42,7 +42,7 @@ public class ProjectFormServlet extends GenericServlet {
       List<User> users = userDao.list();
       for (User user : users) {
         out.printf("          <li><input name='member' value='%d' type='checkbox'> %s</li>\n",
-            user.getNo(), user.getName());
+                user.getNo(), user.getName());
       }
       out.println("        </ul>");
 

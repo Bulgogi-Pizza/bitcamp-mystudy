@@ -3,17 +3,14 @@ package bitcamp.myapp.servlet.board;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.User;
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/board/add")
 public class BoardAddServlet extends GenericServlet {
@@ -29,8 +26,7 @@ public class BoardAddServlet extends GenericServlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
-      throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 

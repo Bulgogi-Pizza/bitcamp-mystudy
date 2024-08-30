@@ -3,17 +3,18 @@ package bitcamp.myapp.servlet.project;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
-import java.util.ArrayList;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Date;
+import java.util.ArrayList;
 
 @WebServlet("/project/update")
 public class ProjectUpdateServlet extends GenericServlet {
@@ -24,13 +25,11 @@ public class ProjectUpdateServlet extends GenericServlet {
   @Override
   public void init() throws ServletException {
     this.projectDao = (ProjectDao) this.getServletContext().getAttribute("projectDao");
-    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext()
-        .getAttribute("sqlSessionFactory");
+    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext().getAttribute("sqlSessionFactory");
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
-      throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 

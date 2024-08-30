@@ -2,14 +2,11 @@ package bitcamp.myapp.servlet.project;
 
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.vo.Project;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/project/list")
 public class ProjectListServlet implements Servlet {
@@ -24,8 +21,7 @@ public class ProjectListServlet implements Servlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
-      throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 
@@ -41,9 +37,8 @@ public class ProjectListServlet implements Servlet {
       out.println("  <tbody>");
 
       for (Project project : projectDao.list()) {
-        out.printf(
-            "      <tr><td>%d</td><td><a href='/project/view?no=%1$d'>%s</a></td><td>%s ~ %s</td></tr>\n",
-            project.getNo(), project.getTitle(), project.getStartDate(), project.getEndDate());
+        out.printf("      <tr><td>%d</td><td><a href='/project/view?no=%1$d'>%s</a></td><td>%s ~ %s</td></tr>\n",
+                project.getNo(), project.getTitle(), project.getStartDate(), project.getEndDate());
       }
 
       out.println("  </tbody>");

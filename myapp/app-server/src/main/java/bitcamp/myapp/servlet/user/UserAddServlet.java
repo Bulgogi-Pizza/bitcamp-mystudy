@@ -2,16 +2,13 @@ package bitcamp.myapp.servlet.user;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/user/add")
 public class UserAddServlet extends GenericServlet {
@@ -27,8 +24,7 @@ public class UserAddServlet extends GenericServlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
-      throws ServletException, IOException {
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 
