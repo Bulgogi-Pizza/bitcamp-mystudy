@@ -1,19 +1,16 @@
 package bitcamp.myapp.servlet.project;
 
 import bitcamp.myapp.dao.ProjectDao;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 @WebServlet("/project/delete")
-public class ProjectDeleteServlet extends GenericServlet {
+public class ProjectDeleteServlet extends HttpServlet {
 
   private ProjectDao projectDao;
   private SqlSessionFactory sqlSessionFactory;
@@ -21,37 +18,28 @@ public class ProjectDeleteServlet extends GenericServlet {
   @Override
   public void init() throws ServletException {
     this.projectDao = (ProjectDao) this.getServletContext().getAttribute("projectDao");
-    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext().getAttribute("sqlSessionFactory");
+    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext()
+        .getAttribute("sqlSessionFactory");
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-    res.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = res.getWriter();
-
-    req.getRequestDispatcher("/header").include(req, res);
-
+  protected void doGet(HttpServletRequest req, HttpServletResponse res)
+      throws ServletException, IOException {
     try {
-      out.println("<h1>프로젝트 삭제 결과</h1>");
-
       int projectNo = Integer.parseInt(req.getParameter("no"));
 
       projectDao.deleteMembers(projectNo);
       if (projectDao.delete(projectNo)) {
         sqlSessionFactory.openSession(false).commit();
-        out.println("<p>삭제 했습니다.</p>");
+        ((HttpServletResponse) res).sendRedirect("/project/list");
       } else {
-        out.println("<p>없는 프로젝트입니다.</p>");
+        throw new Exception("없는 프로젝트입니다.");
       }
 
     } catch (Exception e) {
       sqlSessionFactory.openSession(false).rollback();
-      out.println("<p>삭제 중 오류 발생!</p>");
+      req.setAttribute("exception", e);
+      req.getRequestDispatcher("/error.jsp").forward(req, res);
     }
-
-    out.println("</body>");
-    out.println("</html>");
-
-    ((HttpServletResponse) res).setHeader("Refresh", "1;url=/project/list");
   }
 }
