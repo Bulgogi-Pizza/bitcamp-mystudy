@@ -2,13 +2,14 @@ package bitcamp.myapp.servlet.project;
 
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.vo.Project;
-import java.io.IOException;
-import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/project/list")
 public class ProjectListServlet extends HttpServlet {
@@ -21,8 +22,7 @@ public class ProjectListServlet extends HttpServlet {
   }
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException {
+  protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     try {
       List<Project> list = projectDao.list();
       req.setAttribute("list", list);

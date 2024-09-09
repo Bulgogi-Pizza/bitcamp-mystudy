@@ -1,27 +1,38 @@
 package bitcamp.myapp.servlet.board;
 
 import bitcamp.myapp.dao.BoardDao;
+import bitcamp.myapp.vo.AttachedFile;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.User;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.UUID;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+@MultipartConfig(
+    maxFileSize = 1024 * 1024 * 10,
+    maxRequestSize = 1024 * 1024 * 30)
 @WebServlet("/board/update")
 public class BoardUpdateServlet extends HttpServlet {
 
   private BoardDao boardDao;
   private SqlSessionFactory sqlSessionFactory;
+  private String uploadDir;
 
   @Override
   public void init() throws ServletException {
     this.boardDao = (BoardDao) this.getServletContext().getAttribute("boardDao");
     this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext()
         .getAttribute("sqlSessionFactory");
+    this.uploadDir = this.getServletContext().getRealPath("/upload/board");
   }
 
   @Override
@@ -41,9 +52,33 @@ public class BoardUpdateServlet extends HttpServlet {
 
       board.setTitle(req.getParameter("title"));
       board.setContent(req.getParameter("content"));
+
+      ArrayList<AttachedFile> attachedFiles = new ArrayList<>();
+
+      Collection<Part> parts = req.getParts();
+      for (Part part : parts) {
+        if (!part.getName().equals("files") || part.getSize() == 0) {
+          continue;
+        }
+
+        AttachedFile attachedFile = new AttachedFile();
+        attachedFile.setFilename(UUID.randomUUID().toString());
+        attachedFile.setOriginFilename(part.getSubmittedFileName());
+
+        part.write(this.uploadDir + "/" + attachedFile.getFilename());
+
+        attachedFiles.add(attachedFile);
+      }
+
+      board.setAttachedFiles(attachedFiles);
+
       boardDao.update(board);
+      if (board.getAttachedFiles().size() > 0) {
+        boardDao.insertFiles(board);
+      }
+
       sqlSessionFactory.openSession(false).commit();
-      ((HttpServletResponse) res).sendRedirect("/board/list");
+      res.sendRedirect("/board/list");
 
     } catch (Exception e) {
       sqlSessionFactory.openSession(false).rollback();

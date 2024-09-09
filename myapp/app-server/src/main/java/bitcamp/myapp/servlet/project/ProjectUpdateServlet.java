@@ -3,15 +3,16 @@ package bitcamp.myapp.servlet.project;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
-import java.io.IOException;
-import java.sql.Date;
-import java.util.ArrayList;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
+import java.io.IOException;
+import java.sql.Date;
+import java.util.ArrayList;
 
 @WebServlet("/project/update")
 public class ProjectUpdateServlet extends HttpServlet {
@@ -22,13 +23,11 @@ public class ProjectUpdateServlet extends HttpServlet {
   @Override
   public void init() throws ServletException {
     this.projectDao = (ProjectDao) this.getServletContext().getAttribute("projectDao");
-    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext()
-        .getAttribute("sqlSessionFactory");
+    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext().getAttribute("sqlSessionFactory");
   }
 
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException {
+  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     try {
       Project project = new Project();
       project.setNo(Integer.parseInt(req.getParameter("no")));
@@ -55,7 +54,7 @@ public class ProjectUpdateServlet extends HttpServlet {
         projectDao.insertMembers(project.getNo(), project.getMembers());
       }
       sqlSessionFactory.openSession(false).commit();
-      ((HttpServletResponse) res).sendRedirect("/project/list");
+      res.sendRedirect("/project/list");
 
     } catch (Exception e) {
       sqlSessionFactory.openSession(false).rollback();

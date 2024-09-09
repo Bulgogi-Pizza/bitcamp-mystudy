@@ -1,13 +1,14 @@
 package bitcamp.myapp.servlet.user;
 
 import bitcamp.myapp.dao.UserDao;
-import java.io.IOException;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
+import java.io.IOException;
 
 @WebServlet("/user/delete")
 public class UserDeleteServlet extends HttpServlet {
@@ -18,13 +19,11 @@ public class UserDeleteServlet extends HttpServlet {
   @Override
   public void init() throws ServletException {
     this.userDao = (UserDao) this.getServletContext().getAttribute("userDao");
-    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext()
-        .getAttribute("sqlSessionFactory");
+    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext().getAttribute("sqlSessionFactory");
   }
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException {
+  protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     try {
       int userNo = Integer.parseInt(req.getParameter("no"));
 

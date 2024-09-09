@@ -1,14 +1,12 @@
-# 50. JSP를 이용하여 MVC 모델2 구조로 변경하기
+# 54. 파일 업로드 다루기 - multipart/form-data POST 요청 처리
 
 ## 학습목표
 
-- MVC 모델1/모델2 특징 이해하고 설명할 수 있다.
-- JSP 구동 원리 이해하고 사용할 수 있다.
+- Servlet API를 이용하여 multipart/form-data 파라미터를 다룰 수 있다.
 
 ## 요구사항
 
-- JSP 기술을 사용하여 UI 출력 코드를 자동화하라.
-- MVC 모델2 아키텍처로 변경하라.
+- 게시글에 첨부 파일 기능을 추가하라.
 
 ## 실행 결과
 
@@ -16,7 +14,18 @@
 
 ## 작업
 
-- 
+- 첨부 파일 데이터를 저장할 테이블 정의
+  - myapp_board_files 테이블 정의
+- 게시글 입력폼에 첨부파일 선택 기능 추가
+  - /board/form.jsp 변경
+  - /board/view.jsp 변경
+- 첨부파일 도메인 클래스 추가
+  - AttachedFile 클래스 생성
+  - Board 클래스에 첨부파일 필드 추가
+- BoardDao 클래스 변경
+  - insertFiles() 메서드 추가
+- BoardDaoMapper 파일 변경
+  - "insertFiles" SQL 문 추가
 
 ## 소스 파일
 

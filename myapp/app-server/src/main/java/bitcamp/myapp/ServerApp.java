@@ -1,12 +1,13 @@
 package bitcamp.myapp;
 
-import java.io.File;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
+
+import java.io.File;
 
 public class ServerApp {
 
@@ -27,7 +28,7 @@ public class ServerApp {
     Tomcat tomcat = new Tomcat();
 
     // 서버의 포트 번호 설정
-    tomcat.setPort(8889);
+    tomcat.setPort(8888);
 
     // 톰캣 서버를 실행하는 동안 사용할 임시 폴더 지정
     tomcat.setBaseDir("temp");
@@ -39,8 +40,8 @@ public class ServerApp {
     // 톰캣 서버에 배포할 웹 애플리케이션의 환경 정보 준비
     // => 정적 웹 자원의 경로
     StandardContext ctx = (StandardContext) tomcat.addWebapp(
-        "/", // 컨텍스트 경로(웹 애플리케이션 경로)
-        new File("src/main/webapp").getAbsolutePath() // 웹 애플리케이션 파일이 있는 실제 경로
+            "/", // 컨텍스트 경로(웹 애플리케이션 경로)
+            new File("src/main/webapp").getAbsolutePath() // 웹 애플리케이션 파일이 있는 실제 경로
     );
     ctx.setReloadable(true);
 
@@ -50,10 +51,10 @@ public class ServerApp {
     // 웹 애플리케이션의 서블릿 클래스 등록
     // => 동적 웹 자원의 경로
     resources.addPreResources(new DirResourceSet(
-        resources, // 루트 웹 애플리케이션 정보
-        "/WEB-INF/classes", // 서블릿 클래스 파일의 위치 정보
-        new File("build/classes/java/main").getAbsolutePath(), // 서블릿 클래스 파일이 있는 실제 경로
-        "/" // 웹 애플리케이션 내부 경로
+            resources, // 루트 웹 애플리케이션 정보
+            "/WEB-INF/classes", // 서블릿 클래스 파일의 위치 정보
+            new File("build/classes/java/main").getAbsolutePath(), // 서블릿 클래스 파일이 있는 실제 경로
+            "/" // 웹 애플리케이션 내부 경로
     ));
 
     // 웹 애플리케이션 설정 정보를 웹 애플리케이션 환경 정보에 등록

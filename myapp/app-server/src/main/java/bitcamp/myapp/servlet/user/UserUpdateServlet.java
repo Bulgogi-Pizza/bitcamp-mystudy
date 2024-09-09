@@ -2,13 +2,14 @@ package bitcamp.myapp.servlet.user;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-import java.io.IOException;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.ibatis.session.SqlSessionFactory;
+import java.io.IOException;
 
 @WebServlet("/user/update")
 public class UserUpdateServlet extends HttpServlet {
@@ -19,15 +20,11 @@ public class UserUpdateServlet extends HttpServlet {
   @Override
   public void init() throws ServletException {
     this.userDao = (UserDao) this.getServletContext().getAttribute("userDao");
-    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext()
-        .getAttribute("sqlSessionFactory");
+    this.sqlSessionFactory = (SqlSessionFactory) this.getServletContext().getAttribute("sqlSessionFactory");
   }
 
-
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse res)
-      throws ServletException, IOException {
-    req.setCharacterEncoding("UTF-8");
+  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     try {
       User user = new User();
       user.setNo(Integer.parseInt(req.getParameter("no")));

@@ -2,19 +2,17 @@ package bitcamp.myapp.servlet.auth;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-
-import javax.servlet.GenericServlet;
+import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
 @WebServlet("/auth/login")
-public class LoginServlet extends GenericServlet {
+public class LoginServlet extends HttpServlet {
 
   private UserDao userDao;
 
@@ -24,7 +22,15 @@ public class LoginServlet extends GenericServlet {
   }
 
   @Override
-  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+  protected void doGet(HttpServletRequest req, HttpServletResponse res)
+      throws ServletException, IOException {
+    res.setContentType("text/html;charset=UTF-8");
+    req.getRequestDispatcher("/auth/form.jsp").include(req, res);
+  }
+
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse res)
+      throws ServletException, IOException {
     try {
       String email = req.getParameter("email");
       String password = req.getParameter("password");
@@ -37,11 +43,20 @@ public class LoginServlet extends GenericServlet {
         return;
       }
 
+      if (req.getParameter("saveEmail") != null) {
+        Cookie cookie = new Cookie("email", email);
+        cookie.setMaxAge(60 * 60 * 24 * 7);
+        res.addCookie(cookie);
+      } else {
+        Cookie cookie = new Cookie("email", "test@test.com");
+        cookie.setMaxAge(0);
+        res.addCookie(cookie);
+      }
+
       HttpServletRequest httpReq = (HttpServletRequest) req;
       HttpSession session = httpReq.getSession();
       session.setAttribute("loginUser", user);
-      ((HttpServletResponse) res).sendRedirect("/");
-
+      res.sendRedirect("/");
 
     } catch (Exception e) {
       req.setAttribute("exception", e);

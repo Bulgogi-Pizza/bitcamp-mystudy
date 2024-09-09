@@ -29,7 +29,7 @@ User loginUser = (User) ((HttpServletRequest) request).getSession().getAttribute
 %>
   <div class='login-state pos-right'>
 <%if (loginUser == null) {%>
-    <a href='/auth/form' class='btn btn-primary'>로그인</a>
+    <a href='/auth/login' class='btn btn-primary'>로그인</a>
 <%} else {%>
     <a href='/user/view?no=<%=loginUser.getNo()%>' class='btn btn-light'><%=loginUser.getName()%></a>
     <a href='/auth/logout' class='btn btn-secondary'>로그아웃</a>
