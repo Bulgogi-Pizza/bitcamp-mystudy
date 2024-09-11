@@ -23,7 +23,6 @@
         </collection>
     </resultMap>
 
-
     <resultMap id="AttachedFileMap" type="attachedFile">
         <id column="board_file_id" property="fileNo"/>
         <result column="filename" property="filename"/>
@@ -109,4 +108,14 @@
         where
             board_file_id = #{fileNo}
     </select>
+
+    <delete id="deleteFile" parameterType="int">
+        delete from myapp_board_files
+        where board_file_id = #{fileNo}
+    </delete>
+
+    <delete id="deleteFiles" parameterType="int">
+        delete from myapp_board_files
+        where board_id = #{boardNo}
+    </delete>
 </mapper>
