@@ -1,12 +1,12 @@
-# 59. 요청 핸들러의 파라미터를 자동으로 인식하기
+# 61. Spring Framework 도입하기
 
 ## 학습목표
 
-- 메서드의 파라미터 정보를 분석하여 그에 맞는 아규먼트를 준비하고 호출할 수 있다.
+- Spring IoC 컨테이너와 Spring WebMVC 프레임워크를 프로젝트에 적용할 수 있다.
 
 ## 요구사항
 
-- 페이지 컨트롤러의 요청 핸들러의 파라미터를 고정하지 말라.
+- 프로젝트에 Spring Framework를 적용하라.
 
 ## 실행 결과
 
@@ -14,11 +14,29 @@
 
 ## 작업
 
-- 프론트 컨트롤러 변경
-  - DispatcherServlet 클래스 변경
-- 클라이언트 요청 데이터를 받는 파라미터를 지정할 애노테이션 생성
-  - RequestParam 애노테이션 정의
-- 페이지 컨트롤러 변경
+- Spring WebMVC 라이브러리 가져오기
+  - 'spring-webmvc' 라이브러리를 프로젝트에 포함
+  - build.gradle 변경
+- 기존 클래스를 스프링 프레임워크에서 제공하는 것으로 교체 
+  - IoC 컨테이너 클래스 교체
+  - DispatcherServlet 서블릿 클래스 교체
+  - CharacterEncodingFilter 필터 클래스 교체
+  - 애노테이션 교체
+- AppConfig 클래스 변경
+- 서비스 클래스 변경
+- 페이지 컨트롤러 클래스 변경
+  - 파라미터와 리턴타입 변경
+- 뷰 컴포넌트 URL 다루기
+  - JSP를 /WEB-INF 배치 폴더로 옮김
+    - 외부에서 직접 접근 차단
+  - InternalResourceViewResolver 설정
+    - AppConfig 클래스 변경
+  - 페이지 컨트롤러 클래스 변경
+  - JSP 파일 변경
+- Mybatis를 스프링 프레임워크와 연동하기
+  - 'mybatis-spring' 라이브러리를 프로젝트 추가
+  - 'spring-jdbc' 라이브러리를 프로젝트에 추가
+
 
 
 ## 소스 파일
