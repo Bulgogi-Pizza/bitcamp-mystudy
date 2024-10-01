@@ -15,8 +15,8 @@
 
 <c:if test="${not empty user}">
     <form action='update' method="post" enctype="multipart/form-data">
-        <a href="https://kr.object.ncloudstorage.com/bitcamp-bucket108/user/${user.photo}">
-            <img src="https://rw7r3pq34934.edge.naverncp.com/iU8lBfh9Gc/user/${user.photo}?type=f&w=100&h=100">
+        <a href="https://kr.object.ncloudstorage.com/bitcamp-bucket108/user/${user.photo == null ? 'default.png' : user.photo}">
+            <img src="https://rw7r3pq34934.edge.naverncp.com/iU8lBfh9Gc/user/${user.photo == null ? 'default.png' : user.photo}?type=f&w=100&h=100">
         </a><input name="file" type="file"><br>
         번호: <input name='no' readonly type='text' value='${user.no}'><br>
         이름: <input name='name' type='text' value='${user.name}'><br>

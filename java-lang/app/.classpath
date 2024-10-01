@@ -39,6 +39,31 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.1.13/1e41c3a429bb57af6ae6ebdf32e740cd162cc69b/spring-context-6.1.13-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.1.13/d5163ddae069c5d78c841cd3a60c4db25bf16401/spring-context-6.1.13.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.1.13/a43b38abdef112a5e1bbdb7432fff144589ba3df/spring-aop-6.1.13-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.1.13/ad2c631e1717fdc6d91d56c06d4fd61e0215c19a/spring-aop-6.1.13.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.1.13/cc928c2d28eded177ee8bdab838a01691cb65e38/spring-beans-6.1.13-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.1.13/90bbee6278b46b145e64e5ae29316bdd459c6826/spring-beans-6.1.13.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.1.13/a575eb44389d0df02bb46712494ddf4c520a7d91/spring-expression-6.1.13-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.1.13/be30254712ca0549cbd539ba05c57064917253f3/spring-expression-6.1.13.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.1.13/5c5629311c3d0e5013248ddd1b38ce35182f5e3b/spring-core-6.1.13-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.1.13/ddbd765408d2665f47017c8f05a7682012f91da3/spring-core-6.1.13.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.4.0/b1f04cefc6e5dd8affec1b27c8f772e02fba08b/mysql-connector-j-8.4.0-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.4.0/b1bc0f47bcad26ad5f9bceefb63fcb920d868fca/mysql-connector-j-8.4.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -100,6 +125,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/com.github.waffle/waffle-jna/3.3.0/a7c7df38550170fa53d948b09c71cd4f0c0f8bce/waffle-jna-3.3.0-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/com.github.waffle/waffle-jna/3.3.0/6c1a06b345702bb1dfd77006af926b091bded851/waffle-jna-3.3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.12.10/78ba5998b7aed7069cadeede88bcdda5815b8cf3/micrometer-observation-1.12.10-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.12.10/222685ec0561c90e300eac71093f51eb0d7e1a17/micrometer-observation-1.12.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.1.13/e18520700b2f0b0fd9036791cfc977bc07c7d9d1/spring-jcl-6.1.13-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.1.13/37291ff008a66a9dbf2c98e11bd468cfadaa7ebc/spring-jcl-6.1.13.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -200,6 +235,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.7/f887f95694cd20d51a062446b6e3d09dd02d98ff/slf4j-api-2.0.7-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.7/41eb7184ea9d556f23e18b5cb99cad1f8581fc00/slf4j-api-2.0.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/cdi/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.12.10/86e0802374cb43a3ae3d80d5bee90d991b79a987/micrometer-commons-1.12.10-sources.jar" kind="lib" path="/Users/cdi/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.12.10/93683cbdf6dbd7f4f9781a207aa350f4101725d9/micrometer-commons-1.12.10.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
