@@ -1,5 +1,5 @@
 // 스레드 재사용 - 3단계) sleep()/timeout 을 활용한 스레드 재사용 II
-package com.eomcs.concurrent.ex6;
+package study.concurrent.ex6;
 
 import java.util.Scanner;
 

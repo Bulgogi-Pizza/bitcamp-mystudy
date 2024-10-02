@@ -2,7 +2,7 @@
 // => "DTO(Data Transfer Object)"라 부른다.
 // => "도메인 객체(domain)"라고도 부른다.
 // => "VO(Value Object)"라 부른다.
-package com.eomcs.jdbc.ex2;
+package study.jdbc.ex2;
 
 import java.io.Serializable;
 import java.sql.Date;

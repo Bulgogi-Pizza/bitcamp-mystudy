@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex05.d;
+package study.spring.ioc.ex05.d;
 
 public class Tire {
   String maker;

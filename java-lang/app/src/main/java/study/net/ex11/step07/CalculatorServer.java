@@ -1,5 +1,5 @@
 // 계산기 서버 만들기 - 7단계: 클라이언트의 종료 요청 'quit' 처리
-package com.eomcs.net.ex11.step07;
+package study.net.ex11.step07;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,5 +1,5 @@
 // 애노테이션 프로퍼티 타입
-package com.eomcs.annotation.ex6;
+package study.annotation.ex6;
 
 // @MyAnnotation3는 메서드에만 붙일 수 있다.
 //@MyAnnotation3

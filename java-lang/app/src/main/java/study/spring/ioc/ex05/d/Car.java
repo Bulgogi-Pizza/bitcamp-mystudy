@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex05.d;
+package study.spring.ioc.ex05.d;
 
 import java.util.Properties;
 

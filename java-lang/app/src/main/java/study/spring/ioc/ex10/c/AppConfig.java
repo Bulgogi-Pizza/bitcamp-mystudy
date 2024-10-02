@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex10.c;
+package study.spring.ioc.ex10.c;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import com.eomcs.spring.ioc.ex10.Car;
+import study.spring.ioc.ex10.Car;
 
 @Configuration
 
@@ -15,8 +15,8 @@ import com.eomcs.spring.ioc.ex10.Car;
 // => 파일 경로가 클래스 경로를 가리킨다면,
 //    파일 경로 앞에 "classpath:" 접두어를 붙여라.
 @PropertySource({
-  "classpath:com/eomcs/spring/ioc/ex10/c/jdbc.properties",
-  "classpath:com/eomcs/spring/ioc/ex10/c/jdbc2.properties"
+  "classpath:study/spring/ioc/ex10/c/jdbc.properties",
+  "classpath:study/spring/ioc/ex10/c/jdbc2.properties"
 })
 public class AppConfig {
 

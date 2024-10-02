@@ -1,9 +1,9 @@
 // 클래스를 이용하여 스프링 설정하기 - @Configuration 애노테이션
-package com.eomcs.spring.ioc.ex10.b;
+package study.spring.ioc.ex10.b;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam01 {
 
@@ -18,7 +18,7 @@ public class Exam01 {
     // 그 리턴 값을 저장한다.
     //
     ApplicationContext iocContainer = new AnnotationConfigApplicationContext(
-        "com.eomcs.spring.ioc.ex10.b");
+        "study.spring.ioc.ex10.b");
 
     SpringUtils.printBeanList(iocContainer);
   }

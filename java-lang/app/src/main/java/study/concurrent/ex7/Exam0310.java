@@ -1,5 +1,5 @@
 // Executors 태스크 프레임워크 - 작업 실행 : execute()
-package com.eomcs.concurrent.ex7;
+package study.concurrent.ex7;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

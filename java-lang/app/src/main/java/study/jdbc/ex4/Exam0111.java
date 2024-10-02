@@ -1,5 +1,5 @@
 // insert 한 후 auto increment PK 값 리턴 받기
-package com.eomcs.jdbc.ex4;
+package study.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

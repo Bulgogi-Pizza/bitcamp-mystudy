@@ -1,6 +1,6 @@
 // 계산기 클라이언트 만들기 - 3단계: 응답을 읽는 코드를 별도의 메서드로 분리한다.
 // - 기능 별로 메서드로 분리하면 코드를 관리하기가 편하다.
-package com.eomcs.net.ex11.step03;
+package study.net.ex11.step03;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

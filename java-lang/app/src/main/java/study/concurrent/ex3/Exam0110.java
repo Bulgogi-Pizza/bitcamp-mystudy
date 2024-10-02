@@ -1,5 +1,5 @@
 // 스레드 만들기 I - Thread를 상속 받기
-package com.eomcs.concurrent.ex3;
+package study.concurrent.ex3;
 
 public class Exam0110 {
 

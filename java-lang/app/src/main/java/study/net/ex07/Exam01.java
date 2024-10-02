@@ -1,5 +1,5 @@
 // URL(Uniform Resource Locator) - URL을 다루는 클래스
-package com.eomcs.net.ex07;
+package study.net.ex07;
 
 import java.net.URI;
 import java.net.URL;

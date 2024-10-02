@@ -1,8 +1,8 @@
 // 프로퍼티 에디터 만들기
-package com.eomcs.spring.ioc.ex07.d;
+package study.spring.ioc.ex07.d;
 
 import java.beans.PropertyEditorSupport;
-import com.eomcs.spring.ioc.ex07.Engine;
+import study.spring.ioc.ex07.Engine;
 
 public class CustomEngineEditor extends PropertyEditorSupport {
   @Override

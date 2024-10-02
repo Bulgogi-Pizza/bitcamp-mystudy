@@ -1,5 +1,5 @@
 // 객체 생성 - 빈 생성 정책
-package com.eomcs.spring.ioc.ex02.c;
+package study.spring.ioc.ex02.c;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,7 +8,7 @@ public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex02/c/application-context.xml");
+        "study/spring/ioc/ex02/c/application-context.xml");
 
     // IoC 컨테이너가 생성될 때,
     // "singleton" 객체는 기본으로 생성된다.

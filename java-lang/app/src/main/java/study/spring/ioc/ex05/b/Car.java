@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex05.b;
+package study.spring.ioc.ex05.b;
 
 import java.util.List;
 

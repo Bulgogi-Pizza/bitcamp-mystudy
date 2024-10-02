@@ -1,5 +1,5 @@
 // 애노테이션 프로퍼티 값 추출
-package com.eomcs.annotation.ex5;
+package study.annotation.ex5;
 
 public class Exam01 {
 

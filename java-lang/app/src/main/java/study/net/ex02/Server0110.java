@@ -1,5 +1,5 @@
 // 서버 만들기
-package com.eomcs.net.ex02;
+package study.net.ex02;
 
 import java.net.ServerSocket;
 import java.util.Scanner;

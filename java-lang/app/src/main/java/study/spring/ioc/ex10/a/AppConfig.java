@@ -1,7 +1,7 @@
-package com.eomcs.spring.ioc.ex10.a;
+package study.spring.ioc.ex10.a;
 
 import org.springframework.context.annotation.Bean;
-import com.eomcs.spring.ioc.ex10.Car;
+import study.spring.ioc.ex10.Car;
 
 public class AppConfig {
 

@@ -23,12 +23,12 @@ public class Exam0140 {
     // => 시스템 프로퍼티 설정 방법
     // 예1) JVM을 실행할 때 JVM 옵션을 지정하는 방법
     // - java -Djdbc.drivers=클래스명:클래스명:클래스명 Exam01 j40
-    // - 예) java -Djdbc.drivers=com.eomcs.jdbc.ex1.MyDriver Exam0140
+    // - 예) java -Djdbc.drivers=study.jdbc.ex1.MyDriver Exam0140
     //
     // 예2) 프로그램 코드에서 설정하는 방법
-    // - System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
+    // - System.setProperty("jdbc.drivers", "study.jdbc.ex1.MyDriver");
     //
-    //    System.setProperty("jdbc.drivers", "com.eomcs.jdbc.ex1.MyDriver");
+    //    System.setProperty("jdbc.drivers", "study.jdbc.ex1.MyDriver");
     //    System.out.printf("jdbc.drivers=%s\n", System.getProperty("jdbc.drivers"));
 
     try {

@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    <bean id="c1" class="com.eomcs.spring.ioc.ex08.a.Car">
+    <bean id="c1" class="study.spring.ioc.ex08.a.Car">
         <property name="model" value="티코"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
@@ -14,7 +14,7 @@
         <property name="engine" ref="e1"/>
     </bean>
     
-    <bean id="e1" class="com.eomcs.spring.ioc.ex08.a.Engine">
+    <bean id="e1" class="study.spring.ioc.ex08.a.Engine">
         <property name="maker" value="비트자동차"/>
         <property name="valve" value="16"/>
         <property name="cylinder" value="4"/>

@@ -1,5 +1,5 @@
 // URL 요청하기 - URLConnection 사용
-package com.eomcs.net.ex08;
+package study.net.ex08;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

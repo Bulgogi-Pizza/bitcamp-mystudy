@@ -1,5 +1,5 @@
 // 파일 입출력 객체에 데코레이터 연결하기
-package com.eomcs.io.ex14;
+package study.io.ex14;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;

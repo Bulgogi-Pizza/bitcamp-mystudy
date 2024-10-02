@@ -1,5 +1,5 @@
 // 애노테이션 프로퍼티 - 필수 프로퍼티
-package com.eomcs.annotation.ex3;
+package study.annotation.ex3;
 
 public @interface MyAnnotation {
   String value(); 

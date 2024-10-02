@@ -1,5 +1,5 @@
 // URL 클래스를 이용하여 HTTP 요청 수행하기
-package com.eomcs.net.ex08;
+package study.net.ex08;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

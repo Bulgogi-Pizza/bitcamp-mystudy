@@ -1,5 +1,5 @@
 // 대기열에서 기다리고 있는 클라이언트와 연결하기
-package com.eomcs.net.ex02;
+package study.net.ex02;
 
 import java.net.ServerSocket;
 import java.net.Socket;

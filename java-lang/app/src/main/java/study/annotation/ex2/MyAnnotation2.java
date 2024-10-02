@@ -1,5 +1,5 @@
 // 애노테이션 유지 정책
-package com.eomcs.annotation.ex2;
+package study.annotation.ex2;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

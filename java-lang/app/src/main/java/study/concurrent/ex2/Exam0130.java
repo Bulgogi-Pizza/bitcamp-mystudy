@@ -1,5 +1,5 @@
 // 스레드 그룹에 소속된 스레드들
-package com.eomcs.concurrent.ex2;
+package study.concurrent.ex2;
 
 public class Exam0130 {
 

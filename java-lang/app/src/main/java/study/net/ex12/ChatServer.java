@@ -1,4 +1,4 @@
-package com.eomcs.net.ex12;
+package study.net.ex12;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

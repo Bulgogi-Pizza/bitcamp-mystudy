@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="com.eomcs.spring.ioc.ex13.e"/>
+    <context:component-scan base-package="study.spring.ioc.ex13.e"/>
 
     <!-- 애노테이션으로 AOP를 설정하려면 
          AOP 관련 애노테이션을 처리해주는 객체를 등록해야 한다.

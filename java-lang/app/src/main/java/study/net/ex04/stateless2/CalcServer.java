@@ -1,5 +1,5 @@
 // stateless 방식 - 계산기 서버 만들기 + 서버쪽에 계산 결과 유지하기
-package com.eomcs.net.ex04.stateless2;
+package study.net.ex04.stateless2;
 
 import java.io.DataInputStream;
 import java.io.PrintStream;

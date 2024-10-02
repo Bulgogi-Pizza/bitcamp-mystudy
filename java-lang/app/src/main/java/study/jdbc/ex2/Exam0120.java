@@ -1,5 +1,5 @@
 // 게시물 관리 - 목록
-package com.eomcs.jdbc.ex2;
+package study.jdbc.ex2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,5 +1,5 @@
 // auto_increment PK 값을 알아내어 자식 테이블의 데이터를 입력할 때 사용하기
-package com.eomcs.jdbc.ex4;
+package study.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

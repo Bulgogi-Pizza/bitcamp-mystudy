@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- 팩토리 메서드를 통해 객체를 만들기 : 스프링 규칙에 따라 만들기 -->
-    <bean id="c1" class="com.eomcs.spring.ioc.ex06.d.CarFactory">
+    <bean id="c1" class="study.spring.ioc.ex06.d.CarFactory">
         <property name="model" value="소나타"/>
     </bean>
     <!-- 자바 코드:

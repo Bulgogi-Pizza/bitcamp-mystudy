@@ -1,4 +1,4 @@
-package com.eomcs.reflect.ex06.d;
+package study.reflect.ex06.d;
 
 public interface MyInterface {
   int m1(int p1, int p2);

@@ -1,5 +1,5 @@
 // HTTP 클라이언트 만들기
-package com.eomcs.net.ex06;
+package study.net.ex06;
 
 import java.io.PrintStream;
 import java.net.Socket;

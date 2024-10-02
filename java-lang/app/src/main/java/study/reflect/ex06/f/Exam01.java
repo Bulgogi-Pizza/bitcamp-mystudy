@@ -1,17 +1,17 @@
 // Proxy 를 이용한 DAO 구현체 자동 생성하기
-package com.eomcs.reflect.ex06.f;
+package study.reflect.ex06.f;
 
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/reflect/ex06/f/application-context.xml");
+        "study/reflect/ex06/f/application-context.xml");
 
     SpringUtils.printBeanList(iocContainer);
 

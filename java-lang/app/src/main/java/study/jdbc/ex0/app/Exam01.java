@@ -1,10 +1,10 @@
-package com.eomcs.jdbc.ex0.app;
+package study.jdbc.ex0.app;
 
-import com.eomcs.jdbc.ex0.api.Statement;
-import com.eomcs.jdbc.ex0.jre.driver.Type1Statement;
-import com.eomcs.jdbc.ex0.microsoft.typ2.MSType2Statement;
-import com.eomcs.jdbc.ex0.oracle.type2driver.OracleType2Statement;
-import com.eomcs.jdbc.ex0.oracle.type4driver.OracleType4Statement;
+import study.jdbc.ex0.api.Statement;
+import study.jdbc.ex0.jre.driver.Type1Statement;
+import study.jdbc.ex0.microsoft.typ2.MSType2Statement;
+import study.jdbc.ex0.oracle.type2driver.OracleType2Statement;
+import study.jdbc.ex0.oracle.type4driver.OracleType4Statement;
 
 public class Exam01 {
 

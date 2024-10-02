@@ -1,4 +1,4 @@
-package com.eomcs.io.ex11.b;
+package study.io.ex11.b;
 
 // ObjectOutputStream/ObjectInputStream을 통해 인스턴스의 값을
 // 바이트 배열로 자동으로 변환하여 출력하고 읽으려면

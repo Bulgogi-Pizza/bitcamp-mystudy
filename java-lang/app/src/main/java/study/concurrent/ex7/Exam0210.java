@@ -1,5 +1,5 @@
 // Executors 태스크 프레임워크 - 스레드풀 만들기 : 고정크기 스레드풀
-package com.eomcs.concurrent.ex7;
+package study.concurrent.ex7;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

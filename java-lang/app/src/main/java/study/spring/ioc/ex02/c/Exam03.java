@@ -1,15 +1,15 @@
 // 객체 생성 - 빈 생성 정책 : prototype 객체
-package com.eomcs.spring.ioc.ex02.c;
+package study.spring.ioc.ex02.c;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.ex02.Car;
+import study.spring.ioc.ex02.Car;
 
 public class Exam03 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex02/c/application-context.xml");
+        "study/spring/ioc/ex02/c/application-context.xml");
 
     System.out.println("--------------------------");
     Car obj1 = (Car) iocContainer.getBean("c3");

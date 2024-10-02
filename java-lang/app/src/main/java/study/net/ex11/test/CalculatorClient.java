@@ -1,4 +1,4 @@
-package com.eomcs.net.ex11.test;
+package study.net.ex11.test;
 
 import java.io.PrintStream;
 import java.net.Socket;

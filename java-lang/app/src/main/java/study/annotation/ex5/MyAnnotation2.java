@@ -1,5 +1,5 @@
 // 애노테이션 프로퍼티 타입 - 배열
-package com.eomcs.annotation.ex5;
+package study.annotation.ex5;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,5 +1,5 @@
 // 멀티 스레드 재사용 - Pooling 기법을 이용하여 생성된 객체를 재활용하기
-package com.eomcs.concurrent.ex6;
+package study.concurrent.ex6;
 
 import java.util.ArrayList;
 import java.util.Scanner;

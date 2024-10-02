@@ -8,20 +8,20 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:component-scan base-package="com.eomcs.spring.ioc.ex12.a"/>
+    <context:component-scan base-package="study.spring.ioc.ex12.a"/>
 
 <!-- Mybatis SqlSessionFactory 준비하기 -->
 <!--  
 SqlSessionFactory를 만들 때 사용할 설정 파일 읽기 도구를 준비한다.
 자바 코드 예:
   InputStream mybatisConfigInputStream = Resources.getResourceAsStream(
-        "com/eomcs/spring/ioc/ex12/a/mybatis-config.xml");
+        "study/spring/ioc/ex12/a/mybatis-config.xml");
 -->
     <bean id="mybatisConfigInputStream"
           class="org.apache.ibatis.io.Resources"
           factory-method="getResourceAsStream">
       <constructor-arg 
-        value="com/eomcs/spring/ioc/ex12/a/mybatis-config.xml"/>
+        value="study/spring/ioc/ex12/a/mybatis-config.xml"/>
     </bean>
 
 

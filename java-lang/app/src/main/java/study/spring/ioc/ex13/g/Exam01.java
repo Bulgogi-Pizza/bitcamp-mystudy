@@ -1,8 +1,8 @@
 // AOP(Aspect-Oriented Programming) - Java Config로 AOP 설정
-package com.eomcs.spring.ioc.ex13.g;
+package study.spring.ioc.ex13.g;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam01 {
 

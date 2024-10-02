@@ -1,9 +1,9 @@
 // IoC 컨테이너에 객체를 보관하기 II
-package com.eomcs.spring.ioc.ex01.f;
+package study.spring.ioc.ex01.f;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam02 {
   public static void main(String[] args) {
@@ -19,5 +19,3 @@ public class Exam02 {
     System.out.println("실행 완료!");
   }
 }
-
-

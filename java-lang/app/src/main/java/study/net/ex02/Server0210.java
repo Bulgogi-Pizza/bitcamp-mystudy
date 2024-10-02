@@ -1,5 +1,5 @@
 // 대기열 테스트
-package com.eomcs.net.ex02;
+package study.net.ex02;
 
 import java.net.ServerSocket;
 import java.util.Scanner;

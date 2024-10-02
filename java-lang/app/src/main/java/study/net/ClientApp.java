@@ -1,4 +1,4 @@
-package com.eomcs.net;
+package study.net;
 
 import java.io.PrintStream;
 import java.net.Socket;

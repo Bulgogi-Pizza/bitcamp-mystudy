@@ -1,4 +1,4 @@
-package com.eomcs.jdbc.ex1;
+package study.jdbc.ex1;
 
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;

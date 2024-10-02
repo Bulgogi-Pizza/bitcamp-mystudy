@@ -1,5 +1,5 @@
 // 게시판 관리 - 변경 + PreparedStatement 적용
-package com.eomcs.jdbc.ex3;
+package study.jdbc.ex3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

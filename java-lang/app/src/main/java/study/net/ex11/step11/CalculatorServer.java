@@ -1,7 +1,7 @@
 // 계산기 서버 만들기 - 11단계: Stateful 방식을 Stateless 방식으로 전환
 // - 클라이언트 한 번 접속에 한 번만 요청만 처리한다.
 // 
-package com.eomcs.net.ex11.step11;
+package study.net.ex11.step11;
 
 import java.net.ServerSocket;
 

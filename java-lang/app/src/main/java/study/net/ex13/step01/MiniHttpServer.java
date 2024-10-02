@@ -1,4 +1,4 @@
-package com.eomcs.net.ex13.step01;
+package study.net.ex13.step01;
 
 import java.io.OutputStream;
 import java.net.InetSocketAddress;

@@ -20,7 +20,7 @@ public class Exam0210 {
 
   public static void main(String[] args) throws Exception {
     // 다음은 클래스를 로딩한 후 스태틱 필드를 생성하고 스태틱 블록을 실행한다.
-    //    Class clazz = Class.forName("com.eomcs.reflect.ex01.Exam03$A");
+    //    Class clazz = Class.forName("study.reflect.ex01.Exam03$A");
     System.out.println("-----------------------------");
 
     // 자바의 모든 클래스는 "class"라는 특별한 스태틱 변수를 갖고 있다.

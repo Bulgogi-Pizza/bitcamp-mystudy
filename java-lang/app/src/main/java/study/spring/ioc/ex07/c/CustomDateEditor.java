@@ -1,5 +1,5 @@
 // 프로퍼티 에디터 만들기
-package com.eomcs.spring.ioc.ex07.c;
+package study.spring.ioc.ex07.c;
 
 import java.beans.PropertyEditorSupport;
 import java.sql.Date;

@@ -1,5 +1,5 @@
 // 의존 객체 주입 자동화하기 - private 필드에 값을 넣는 방법
-package com.eomcs.spring.ioc.ex08.d;
+package study.spring.ioc.ex08.d;
 
 import java.lang.reflect.Field;
 

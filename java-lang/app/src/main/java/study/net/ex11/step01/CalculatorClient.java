@@ -1,5 +1,5 @@
 // 계산기 클라이언트 만들기 - 1단계: 단순히 서버에 요청하고 응답을 받아 출력한다.
-package com.eomcs.net.ex11.step01;
+package study.net.ex11.step01;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

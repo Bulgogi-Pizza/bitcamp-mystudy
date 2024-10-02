@@ -1,14 +1,14 @@
 // AOP(Aspect-Oriented Programming) - AOP 필터를 적용하는 방법
-package com.eomcs.spring.ioc.ex13.b;
+package study.spring.ioc.ex13.b;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam03 {
 
   public static void main(String[] args) {
     ClassPathXmlApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex13/b/application-context-03.xml");
+        "study/spring/ioc/ex13/b/application-context-03.xml");
 
     SpringUtils.printBeanList(iocContainer);
 

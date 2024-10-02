@@ -1,5 +1,5 @@
 // URL(Uniform Resource Locator) - 포트번호 생략
-package com.eomcs.net.ex07;
+package study.net.ex07;
 
 import java.net.URI;
 import java.net.URL;

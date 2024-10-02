@@ -1,5 +1,5 @@
 // 상대편으로부터 연결 요청 받기 - 서버(server)
-package com.eomcs.net.ex01;
+package study.net.ex01;
 
 import java.io.PrintStream;
 import java.net.ServerSocket;

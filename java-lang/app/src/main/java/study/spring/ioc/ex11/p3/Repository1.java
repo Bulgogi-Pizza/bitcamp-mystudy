@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex11.p3;
+package study.spring.ioc.ex11.p3;
 
 import org.springframework.stereotype.Repository;
 

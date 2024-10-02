@@ -1,5 +1,5 @@
 // 파일 입출력과 예외처리 - 예외 처리 후
-package com.eomcs.io.ex14;
+package study.io.ex14;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

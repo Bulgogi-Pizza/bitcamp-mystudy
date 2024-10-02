@@ -1,5 +1,5 @@
 // Base64 인코딩 : 이미지 파일 --> 인코딩
-package com.eomcs.net.ex10;
+package study.net.ex10;
 
 import java.io.File;
 import java.io.FileInputStream;

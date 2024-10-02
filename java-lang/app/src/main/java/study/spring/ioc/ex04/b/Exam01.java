@@ -1,5 +1,5 @@
 // 프로퍼티 값 자동 형변환
-package com.eomcs.spring.ioc.ex04.b;
+package study.spring.ioc.ex04.b;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,7 +8,7 @@ public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer =
-        new ClassPathXmlApplicationContext("com/eomcs/spring/ioc/ex04/b/application-context.xml");
+        new ClassPathXmlApplicationContext("study/spring/ioc/ex04/b/application-context.xml");
 
     // 프로퍼티의 타입이 int 일 경우 XML에 작성한 문자열이
     // 자동으로 int 값으로 형변환된다.

@@ -1,5 +1,5 @@
 // 애노테이션 중복 사용
-package com.eomcs.annotation.ex7;
+package study.annotation.ex7;
 
 // @Employees 애노테이션에 @Employee 반복을 정의하였다.
 // 그리고 @Employee 애노테이션에 반복할 수 있음을 선언하였다.

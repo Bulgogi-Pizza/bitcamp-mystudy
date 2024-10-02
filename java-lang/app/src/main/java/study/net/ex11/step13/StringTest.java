@@ -1,4 +1,4 @@
-package com.eomcs.net.ex11.step13;
+package study.net.ex11.step13;
 
 public class StringTest {
 

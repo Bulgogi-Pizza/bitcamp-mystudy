@@ -1,5 +1,5 @@
 // stateless 방식 - 계산기 클라이언트 만들기
-package com.eomcs.net.ex04.stateless;
+package study.net.ex04.stateless;
 
 import java.io.DataOutputStream;
 import java.net.Socket;

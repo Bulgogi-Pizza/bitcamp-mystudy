@@ -51,7 +51,6 @@ public class Test01 {
     };
     p7.play();
 
-    가나
 
   }
 }

@@ -1,7 +1,7 @@
-package com.eomcs.spring.ioc.ex06.d;
+package study.spring.ioc.ex06.d;
 
 import org.springframework.beans.factory.FactoryBean;
-import com.eomcs.spring.ioc.ex06.Car;
+import study.spring.ioc.ex06.Car;
 
 // 스프링 IoC 컨테이너가 정한 규칙에 따라 공장 클래스를 만들면,
 // 구현할 때 복잡한 면이 있다.

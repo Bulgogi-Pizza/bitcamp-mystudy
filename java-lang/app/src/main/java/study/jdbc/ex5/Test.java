@@ -1,4 +1,4 @@
-package com.eomcs.jdbc.ex5;
+package study.jdbc.ex5;
 
 import java.io.FileInputStream;
 import java.util.Properties;

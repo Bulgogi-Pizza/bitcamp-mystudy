@@ -34,7 +34,7 @@ public class Exam0110 {
         // 설정해준다면, 그렇다면 원래의 파라미터 이름을 알아낼 수 있다.
         // 즉 -parameters 옵션을 추가하여 컴파일하면 Reflection API로 파라미터 이름을
         // 꺼낼 수 있다.
-        // > javac -d bin/main -encoding UTF-8 -parameters src/com/eomcs/reflect/ex05/Exam01.java
+        // > javac -d bin/main -encoding UTF-8 -parameters src/study/reflect/ex05/Exam01.java
         // 그런데 일반적으로 이 옵션을 붙여 컴파일 하지 않는다.
         // 그럼에도불구하고 Spring Framework나 eclipse IDE에서는
         // 메서드의 파라미터 이름을 정확하게 추출한다.

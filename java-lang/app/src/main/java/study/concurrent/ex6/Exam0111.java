@@ -1,5 +1,5 @@
 // 스레드 재사용 - 1단계) 스레드를 재 사용하려 시도
-package com.eomcs.concurrent.ex6;
+package study.concurrent.ex6;
 
 import java.util.Scanner;
 

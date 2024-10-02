@@ -1,7 +1,7 @@
 // 스프링 IoC 컨테이너 사용
 package study.spring.ioc.ex01.a;
 
-import org.apache.catalina.core.ApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Exam01 {

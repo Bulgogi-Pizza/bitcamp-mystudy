@@ -1,9 +1,9 @@
 // 의존 객체 주입 자동화하기 - 인스턴스 필드에 @Autowired 애노테이션 붙이기
-package com.eomcs.spring.ioc.ex08.d;
+package study.spring.ioc.ex08.d;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam01 {
 
@@ -17,7 +17,7 @@ public class Exam01 {
     // 이 방식은 "객체지향을 파괴하는 방식"이라는 비난을 받는다.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex08/d/application-context.xml");
+        "study/spring/ioc/ex08/d/application-context.xml");
 
     // Spring IoC 컨테이너에 들어 있는 객체 출력
     SpringUtils.printBeanList(iocContainer);

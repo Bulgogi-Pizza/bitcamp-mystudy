@@ -1,5 +1,5 @@
 // auto commit 의 문제점
-package com.eomcs.jdbc.ex4;
+package study.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

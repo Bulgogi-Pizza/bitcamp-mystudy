@@ -1,5 +1,5 @@
 // 스레드의 생명주기(lifecycle) - 우선 순위 조회
-package com.eomcs.concurrent.ex4;
+package study.concurrent.ex4;
 
 public class Exam0210 {
 

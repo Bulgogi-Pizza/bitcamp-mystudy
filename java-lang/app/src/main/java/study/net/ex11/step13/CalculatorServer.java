@@ -5,7 +5,7 @@
 //   웹브라우저에서 주소창에 다음과 같이 URL을 입력한다.
 //   예)   http://localhost/plus?a=100&b=200
 //
-package com.eomcs.net.ex11.step13;
+package study.net.ex11.step13;
 
 import java.net.ServerSocket;
 

@@ -11,10 +11,10 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
     
-    <context:component-scan base-package="com.eomcs.spring.ioc.ex13.d"/>
+    <context:component-scan base-package="study.spring.ioc.ex13.d"/>
     
     <!-- AOP 필터 객체 생성 -->
-    <bean id="myAdvice" class="com.eomcs.spring.ioc.ex13.d.MyAdvice"/> 
+    <bean id="myAdvice" class="study.spring.ioc.ex13.d.MyAdvice"/>
     
     <!-- AOP 적용 -->
     <aop:config>
@@ -33,7 +33,7 @@
 	                args(y,x) 
             -->
             <aop:before 
-                pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..)) and args(y,x)" 
+                pointcut="execution(* study.spring.ioc.ex13.d.X.*(..)) and args(y,x)"
                 method="doBefore"/>
             
             <!-- 메서드를 호출한 후 그 메서드가 리턴한 값 받기 
@@ -41,7 +41,7 @@
                     advice 메서드: doAfterReturning(Object returnValue)
             -->
             <aop:after-returning 
-                pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..))" 
+                pointcut="execution(* study.spring.ioc.ex13.d.X.*(..))"
                 method="doAfterReturning"
                 returning="returnValue"/>
                 
@@ -50,7 +50,7 @@
                     advice메서드: doAfterThrowing(Exception error) 
             -->
             <aop:after-throwing 
-                pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..))" 
+                pointcut="execution(* study.spring.ioc.ex13.d.X.*(..))"
                 method="doAfterThrowing"
                 throwing="error"/>    
         </aop:aspect>

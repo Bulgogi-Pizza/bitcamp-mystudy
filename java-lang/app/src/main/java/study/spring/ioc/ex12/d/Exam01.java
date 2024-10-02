@@ -1,18 +1,18 @@
 // Spring과 Mybatis 연동 : mybatis가 구현한 DAO 객체 사용하기
-package com.eomcs.spring.ioc.ex12.d;
+package study.spring.ioc.ex12.d;
 
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
-import com.eomcs.spring.ioc.ex12.Board;
+import study.spring.ioc.SpringUtils;
+import study.spring.ioc.ex12.Board;
 
 public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex12/d/application-context.xml");
+        "study/spring/ioc/ex12/d/application-context.xml");
 
     SpringUtils.printBeanList(iocContainer);
 

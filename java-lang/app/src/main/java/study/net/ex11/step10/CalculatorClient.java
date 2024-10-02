@@ -1,5 +1,5 @@
 // 계산기 클라이언트 만들기 - 10단계: 여러 개의 클라이언트 접속 처리 (클라이언트 변경 없음)
-package com.eomcs.net.ex11.step10;
+package study.net.ex11.step10;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,8 +1,8 @@
 // AOP(Aspect-Oriented Programming) - AOP 필터 적용 전 : X.m1()의 실행 시간 측정하기
-package com.eomcs.spring.ioc.ex13.a.step2;
+package study.spring.ioc.ex13.a.step2;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam01 {
 
@@ -14,7 +14,7 @@ public class Exam01 {
     //
 
     ClassPathXmlApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex13/a/step2/application-context.xml");
+        "study/spring/ioc/ex13/a/step2/application-context.xml");
 
     SpringUtils.printBeanList(iocContainer);
 

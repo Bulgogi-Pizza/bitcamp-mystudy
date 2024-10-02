@@ -1,4 +1,4 @@
-package com.eomcs.lang.ex99;
+package study.lang.ex99;
 
 //# 키보드 입력 받기 - 문자열 한 줄 읽기
 //

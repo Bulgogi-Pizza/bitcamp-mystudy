@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- 팩토리 메서드를 통해 객체를 만들기 : 인스턴스 메서드 호출 -->
-    <bean id="carFactory" class="com.eomcs.spring.ioc.ex06.c.CarFactory"/>
+    <bean id="carFactory" class="study.spring.ioc.ex06.c.CarFactory"/>
     
     <!-- 자바 코드:
             CarFactory carFactory = new CarFactory();

@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex09.p2;
+package study.spring.ioc.ex09.p2;
 
 import org.springframework.stereotype.Service;
 

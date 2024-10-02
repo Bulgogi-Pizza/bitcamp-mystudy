@@ -1,6 +1,6 @@
-package com.eomcs.jdbc.ex0.oracle.type2driver;
+package study.jdbc.ex0.oracle.type2driver;
 
-import com.eomcs.jdbc.ex0.api.Statement;
+import study.jdbc.ex0.api.Statement;
 
 public class OracleType2Statement implements Statement {
 

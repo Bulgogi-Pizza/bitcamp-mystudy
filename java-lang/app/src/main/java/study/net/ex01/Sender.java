@@ -1,5 +1,5 @@
 // 상대편에 연결을 요청하기 - 클라이언트(client)
-package com.eomcs.net.ex01;
+package study.net.ex01;
 
 import java.io.PrintStream;
 import java.net.Socket;

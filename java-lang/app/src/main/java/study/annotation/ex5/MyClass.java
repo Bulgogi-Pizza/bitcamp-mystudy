@@ -1,5 +1,5 @@
 // 애노테이션 프로퍼티 타입
-package com.eomcs.annotation.ex5;
+package study.annotation.ex5;
 
 // 애노테이션의 모든 프로퍼티에 기본 값이 설정되어 있다면
 // 다음과 같이 프로퍼티 설정을 생략해도 된다.

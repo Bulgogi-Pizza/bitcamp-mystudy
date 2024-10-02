@@ -1,4 +1,4 @@
-package com.eomcs.reflect.ex06.a;
+package study.reflect.ex06.a;
 
 import java.lang.reflect.Proxy;
 

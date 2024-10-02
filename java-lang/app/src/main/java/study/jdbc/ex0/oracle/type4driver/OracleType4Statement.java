@@ -1,6 +1,6 @@
-package com.eomcs.jdbc.ex0.oracle.type4driver;
+package study.jdbc.ex0.oracle.type4driver;
 
-import com.eomcs.jdbc.ex0.api.Statement;
+import study.jdbc.ex0.api.Statement;
 
 public class OracleType4Statement implements Statement {
 

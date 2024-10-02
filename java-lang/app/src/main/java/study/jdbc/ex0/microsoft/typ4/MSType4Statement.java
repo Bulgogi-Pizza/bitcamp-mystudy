@@ -1,6 +1,6 @@
-package com.eomcs.jdbc.ex0.microsoft.typ4;
+package study.jdbc.ex0.microsoft.typ4;
 
-import com.eomcs.jdbc.ex0.api.Statement;
+import study.jdbc.ex0.api.Statement;
 
 public class MSType4Statement implements Statement {
 

@@ -1,5 +1,5 @@
 // 멀티 스레드 적용 후
-package com.eomcs.concurrent.ex1;
+package study.concurrent.ex1;
 
 public class Exam0120 {
 

@@ -1,8 +1,8 @@
-package com.eomcs.spring.ioc.ex10.b;
+package study.spring.ioc.ex10.b;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.eomcs.spring.ioc.ex10.Car;
+import study.spring.ioc.ex10.Car;
 
 //@Configuration
 // AppConfig 클래스가 스프링 설정 정보를 갖고 있는 클래스임을 선포한다!
@@ -18,7 +18,7 @@ import com.eomcs.spring.ioc.ex10.Car;
 // => 그런데 다음과 같이 컨테이너에
 // Java config 클래스를 직접 알려주지 않을 경우에는,
 // 예) ApplicationContext iocContainer =
-//       new AnnotationConfigApplicationContext("com.eomcs.spring.ioc.ex10");
+//       new AnnotationConfigApplicationContext("study.spring.ioc.ex10");
 //
 // 이 클래스가 Java config 클래스임을 표시해야만 컨테이너가 알 수 있다.
 // Java config 클래스임을 표시할 때 붙이는 애노테이션이

@@ -1,5 +1,5 @@
 // 트랜잭션 다루기 - commit & rollback
-package com.eomcs.jdbc.ex4;
+package study.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

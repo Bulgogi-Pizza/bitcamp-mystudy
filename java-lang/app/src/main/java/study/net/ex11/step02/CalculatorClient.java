@@ -1,7 +1,7 @@
 // 계산기 클라이언트 만들기 - 2단계: 응답의 종료 조건을 설정하기
 // - 응답의 종료 조건을 설정하면 언제까지 읽어야 할 지 결정하기 쉽다.
 // - 빈 줄을 받을 때까지 응답을 읽어 출력한다.
-package com.eomcs.net.ex11.step02;
+package study.net.ex11.step02;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

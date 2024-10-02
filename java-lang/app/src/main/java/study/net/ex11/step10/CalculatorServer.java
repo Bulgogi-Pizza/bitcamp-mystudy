@@ -1,6 +1,6 @@
 // 계산기 서버 만들기 - 10단계: 여러 개의 클라이언트 접속 처리
 // - 반복문을 이용하여 계속해서 클라이언트의 접속을 처리한다.
-package com.eomcs.net.ex11.step10;
+package study.net.ex11.step10;
 
 import java.net.ServerSocket;
 

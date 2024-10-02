@@ -1,5 +1,5 @@
 // synchronized - 메서드를 동기화시킴
-package com.eomcs.concurrent.ex5;
+package study.concurrent.ex5;
 
 public class Exam0310 {
   static class Counter {

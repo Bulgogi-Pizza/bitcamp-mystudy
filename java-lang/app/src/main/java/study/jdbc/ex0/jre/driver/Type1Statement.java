@@ -1,6 +1,6 @@
-package com.eomcs.jdbc.ex0.jre.driver;
+package study.jdbc.ex0.jre.driver;
 
-import com.eomcs.jdbc.ex0.api.Statement;
+import study.jdbc.ex0.api.Statement;
 
 public class Type1Statement implements Statement {
 

@@ -1,5 +1,5 @@
 // 계산기 클라이언트 만들기 - 8단계: 예외 처리 추가 (클라이언트는 변경 사항 없음)
-package com.eomcs.net.ex11.step08;
+package study.net.ex11.step08;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -5,6 +5,6 @@
       https://www.springframework.org/schema/beans/spring-beans.xsd">
   
   <!-- 객체 생성 -->
-  <bean id="c1" class="com.eomcs.spring.ioc.ex01.Car"/>
+  <bean id="c1" class="study.spring.ioc.ex01.Car"/>
   
 </beans>

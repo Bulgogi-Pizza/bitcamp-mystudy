@@ -1,5 +1,5 @@
 // 스레드 만들기 II - Runnable 인터페이스 구현 + Thread
-package com.eomcs.concurrent.ex3;
+package study.concurrent.ex3;
 
 public class Exam0210 {
 

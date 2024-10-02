@@ -1,5 +1,5 @@
 // connectionless 클라이언트 - 연결없이 데이터 수신
-package com.eomcs.net.ex05;
+package study.net.ex05;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

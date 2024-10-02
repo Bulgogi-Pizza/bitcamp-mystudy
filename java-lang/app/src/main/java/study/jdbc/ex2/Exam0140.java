@@ -1,5 +1,5 @@
 // 게시판 관리 - 변경
-package com.eomcs.jdbc.ex2;
+package study.jdbc.ex2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package studys.spring.ioc.ex01;
+package study.spring.ioc.ex01;
 
 import org.springframework.stereotype.Component;
 

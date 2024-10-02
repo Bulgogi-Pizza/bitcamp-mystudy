@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex09;
+package study.spring.ioc.ex09;
 
 import java.sql.Date;
 import org.springframework.stereotype.Component;

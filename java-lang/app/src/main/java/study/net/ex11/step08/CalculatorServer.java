@@ -1,5 +1,5 @@
 // 계산기 서버 만들기 - 8단계: 예외 처리 추가
-package com.eomcs.net.ex11.step08;
+package study.net.ex11.step08;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

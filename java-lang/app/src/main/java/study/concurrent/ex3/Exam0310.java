@@ -1,5 +1,5 @@
 // 스레드와 프로그램 종료
-package com.eomcs.concurrent.ex3;
+package study.concurrent.ex3;
 
 import java.util.Scanner;
 

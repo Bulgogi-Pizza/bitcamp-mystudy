@@ -1,5 +1,5 @@
 // 타입아웃 시간 설정하기
-package com.eomcs.net.ex02;
+package study.net.ex02;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;

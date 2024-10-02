@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex12;
+package study.spring.ioc.ex12;
 
 import java.io.Serializable;
 import java.sql.Date;

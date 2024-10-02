@@ -1,5 +1,5 @@
 // 스레드 재사용 - 1단계) 스레드 재 사용전 - 매번 스레드 생성
-package com.eomcs.concurrent.ex6;
+package study.concurrent.ex6;
 
 import java.util.Scanner;
 

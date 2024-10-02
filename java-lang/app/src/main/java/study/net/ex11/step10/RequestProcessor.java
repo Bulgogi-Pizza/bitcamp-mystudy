@@ -1,4 +1,4 @@
-package com.eomcs.net.ex11.step10;
+package study.net.ex11.step10;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

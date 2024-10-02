@@ -1,5 +1,5 @@
 // 계산기 클라이언트 만들기 - 9단계: 리팩토링 (클라이언트 변경 없음)
-package com.eomcs.net.ex11.step09;
+package study.net.ex11.step09;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

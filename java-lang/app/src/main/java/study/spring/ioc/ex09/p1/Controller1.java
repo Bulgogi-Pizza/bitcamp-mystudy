@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex09.p1;
+package study.spring.ioc.ex09.p1;
 
 import org.springframework.stereotype.Controller;
 

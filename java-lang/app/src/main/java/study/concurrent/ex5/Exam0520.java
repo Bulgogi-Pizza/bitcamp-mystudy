@@ -1,5 +1,5 @@
 // sychronized 인스턴스 메서드 - 적용 후
-package com.eomcs.concurrent.ex5;
+package study.concurrent.ex5;
 
 public class Exam0520 {
   public static void main(String[] args) {

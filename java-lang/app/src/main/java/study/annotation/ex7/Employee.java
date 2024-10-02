@@ -1,5 +1,5 @@
 // 애노테이션 중복 사용 - 여러 번 사용 가능
-package com.eomcs.annotation.ex7;
+package study.annotation.ex7;
 
 import java.lang.annotation.Repeatable;
 

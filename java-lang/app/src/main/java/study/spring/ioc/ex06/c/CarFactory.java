@@ -1,6 +1,6 @@
-package com.eomcs.spring.ioc.ex06.c;
+package study.spring.ioc.ex06.c;
 
-import com.eomcs.spring.ioc.ex06.Car;
+import study.spring.ioc.ex06.Car;
 
 public class CarFactory {
 

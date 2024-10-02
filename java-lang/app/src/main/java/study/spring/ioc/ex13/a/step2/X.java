@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex13.a.step2;
+package study.spring.ioc.ex13.a.step2;
 
 import org.springframework.stereotype.Component;
 

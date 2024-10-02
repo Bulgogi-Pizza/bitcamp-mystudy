@@ -1,7 +1,7 @@
-package com.eomcs.spring.ioc.ex06.e;
+package study.spring.ioc.ex06.e;
 
 import org.springframework.beans.factory.FactoryBean;
-import com.eomcs.spring.ioc.ex06.Car;
+import study.spring.ioc.ex06.Car;
 
 // 보통 FactoryBean 구현체를 만들 때는
 // 클래스 이름 뒤에 접미사로 FactoryBean을 붙여

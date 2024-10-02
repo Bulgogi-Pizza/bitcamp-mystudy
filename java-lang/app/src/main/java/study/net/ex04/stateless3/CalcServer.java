@@ -1,5 +1,5 @@
 // stateless 에서 다중 클라이언트 요청 처리하기
-package com.eomcs.net.ex04.stateless3;
+package study.net.ex04.stateless3;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

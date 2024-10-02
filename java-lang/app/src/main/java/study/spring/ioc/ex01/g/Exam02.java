@@ -1,14 +1,14 @@
 // IoC 컨테이너에서 객체 꺼내기 II - 예외 발생
-package com.eomcs.spring.ioc.ex01.g;
+package study.spring.ioc.ex01.g;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
+import study.spring.ioc.SpringUtils;
 
 public class Exam02 {
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex01/g/application-context.xml");
+        "study/spring/ioc/ex01/g/application-context.xml");
 
     // 현재 IoC 컨테이너에 들어 있는 객체를 출력해 보자.
     SpringUtils.printBeanList(iocContainer);

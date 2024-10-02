@@ -1,5 +1,5 @@
 // 스레드의 생명주기(lifecycle) - 우선 순위 설정
-package com.eomcs.concurrent.ex4;
+package study.concurrent.ex4;
 
 public class Exam0220 {
   public static void main(String[] args) throws Exception {

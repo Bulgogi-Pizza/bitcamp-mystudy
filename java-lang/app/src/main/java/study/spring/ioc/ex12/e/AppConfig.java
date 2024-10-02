@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex12.e;
+package study.spring.ioc.ex12.e;
 
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
-import com.eomcs.spring.ioc.ex12.Board;
+import study.spring.ioc.ex12.Board;
 
 
-@PropertySource("classpath:com/eomcs/spring/ioc/ex12/jdbc.properties")
+@PropertySource("classpath:study/spring/ioc/ex12/jdbc.properties")
 
 // Mybatis DAO 프록시를 자동생성할 인터페이스를 지정하기
-@MapperScan("com.eomcs.spring.ioc.ex12.e")
+@MapperScan("study.spring.ioc.ex12.e")
 public class AppConfig {
 
   @Bean
@@ -47,10 +47,10 @@ public class AppConfig {
       ) throws Exception {
     SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
     sqlSessionFactoryBean.setDataSource(dataSource);
-    // sqlSessionFactoryBean.setTypeAliasesPackage("com.eomcs.spring.ioc.ex12");
+    // sqlSessionFactoryBean.setTypeAliasesPackage("study.spring.ioc.ex12");
     sqlSessionFactoryBean.setTypeAliases(Board.class);
     sqlSessionFactoryBean.setMapperLocations(
-        appCtx.getResources("classpath:com/eomcs/spring/ioc/ex12/e/*Mapper.xml"));
+        appCtx.getResources("classpath:study/spring/ioc/ex12/e/*Mapper.xml"));
     return sqlSessionFactoryBean.getObject();
   }
 }

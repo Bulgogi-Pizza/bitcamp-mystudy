@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:component-scan base-package="com.eomcs.spring.ioc.ex09"/>
+    <context:component-scan base-package="study.spring.ioc.ex09"/>
     
     <!-- component-scan 태그를 추가하면 
          내부적으로 annotation-config 태그가 자동으로 추가된다. 

@@ -1,5 +1,5 @@
 // JDBC 드라이버 준비 - 드라이버 클래스 로딩과 등록
-package com.eomcs.jdbc.ex1;
+package study.jdbc.ex1;
 
 import java.sql.DriverManager;
 

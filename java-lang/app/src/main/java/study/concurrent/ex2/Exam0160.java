@@ -1,5 +1,5 @@
 // "system" 스레드 그룹의 자식 그룹들
-package com.eomcs.concurrent.ex2;
+package study.concurrent.ex2;
 
 public class Exam0160 {
 

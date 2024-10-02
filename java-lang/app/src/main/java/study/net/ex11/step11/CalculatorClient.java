@@ -6,7 +6,7 @@
 // - 서버 입장에서는 클라이언트의 대기 시간을 줄일 수 있다.
 // - 클라이언트 입장에서도 다른 클라이언트가 서버를 독점하는 것을 피할 수 있다.
 //  
-package com.eomcs.net.ex11.step11;
+package study.net.ex11.step11;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

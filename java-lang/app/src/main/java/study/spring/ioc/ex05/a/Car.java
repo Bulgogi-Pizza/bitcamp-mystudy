@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex05.a;
+package study.spring.ioc.ex05.a;
 
 import java.util.Arrays;
 

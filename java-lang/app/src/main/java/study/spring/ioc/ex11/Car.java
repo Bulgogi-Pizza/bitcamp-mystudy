@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex11;
+package study.spring.ioc.ex11;
 
 import java.sql.Date;
 

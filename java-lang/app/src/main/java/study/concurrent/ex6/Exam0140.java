@@ -1,5 +1,5 @@
 // 스레드 재사용 - 4단계) wait()/notify() 사용
-package com.eomcs.concurrent.ex6;
+package study.concurrent.ex6;
 
 import java.util.Scanner;
 

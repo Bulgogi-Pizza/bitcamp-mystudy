@@ -1,5 +1,5 @@
 // 계산기 클라이언트 만들기 - 5단계: 코드 리팩토링
-package com.eomcs.net.ex11.step05;
+package study.net.ex11.step05;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

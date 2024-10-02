@@ -1,5 +1,5 @@
 // Statement 와 SQL 삽입 공격
-package com.eomcs.jdbc.ex3;
+package study.jdbc.ex3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

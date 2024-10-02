@@ -39,7 +39,7 @@ public class Exam0110 {
     //
     // - JVM을 실행할 때 출력 데이터의 문자 코드표를 지정하는 방법
     //       java -Dfile.encoding=문자코드표 -cp 클래스경로 클래스명
-    //   예) java -Dfile.encoding=UTF-8 -cp bin/main com.eomcs.io.ex03.Exam0110
+    //   예) java -Dfile.encoding=UTF-8 -cp bin/main study.io.ex03.Exam0110
     //
     // - 단, character set을 지정할 때는 해당 OS에서 사용가능한 문자표이어야 한다.
     //   MS Windows에서는 ms949 문자표를 사용할 수 있지만,

@@ -1,5 +1,5 @@
 // 서버의 승인 테스트
-package com.eomcs.net.ex02;
+package study.net.ex02;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;

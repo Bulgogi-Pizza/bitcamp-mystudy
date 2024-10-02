@@ -1,5 +1,5 @@
 // JDBC 프로그래밍 - DBMS에 연결하기
-package com.eomcs.jdbc.ex1;
+package study.jdbc.ex1;
 
 import java.sql.DriverManager;
 

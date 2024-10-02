@@ -1,5 +1,5 @@
 // JDBC 프로그래밍 - DBMS에 SQL문 보내기 : insert
-package com.eomcs.jdbc.ex1;
+package study.jdbc.ex1;
 
 public class Exam0310 {
 

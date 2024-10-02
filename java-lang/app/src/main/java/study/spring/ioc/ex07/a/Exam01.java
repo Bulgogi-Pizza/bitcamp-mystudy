@@ -1,5 +1,5 @@
 // 프로퍼티 에디터 - 기본으로 내장된 프로퍼티 에디터
-package com.eomcs.spring.ioc.ex07.a;
+package study.spring.ioc.ex07.a;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,7 +8,7 @@ public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex07/a/application-context.xml");
+        "study/spring/ioc/ex07/a/application-context.xml");
 
     System.out.println(iocContainer.getBean("c1"));
     // 실행 오류 발생!

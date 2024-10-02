@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex08.c2;
+package study.spring.ioc.ex08.c2;
 
 public class B {
   //  public B() {

@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex12.b;
+package study.spring.ioc.ex12.b;
 
 import java.io.InputStream;
 import org.apache.ibatis.io.Resources;

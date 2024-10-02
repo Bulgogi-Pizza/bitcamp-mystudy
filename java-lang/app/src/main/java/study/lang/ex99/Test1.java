@@ -1,4 +1,4 @@
-package com.eomcs.lang.ex99;
+package study.lang.ex99;
 
 public class Test1 {
 

@@ -1,6 +1,6 @@
-package com.eomcs.jdbc.ex0.thirdparty.type3driver;
+package study.jdbc.ex0.thirdparty.type3driver;
 
-import com.eomcs.jdbc.ex0.api.Statement;
+import study.jdbc.ex0.api.Statement;
 
 public class Type3Statement implements Statement {
 

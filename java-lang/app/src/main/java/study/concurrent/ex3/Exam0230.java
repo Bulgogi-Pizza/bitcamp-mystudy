@@ -1,5 +1,5 @@
 // Runnable 인터페이스 구현 + Thread - 람다(lambda)로 구현하기
-package com.eomcs.concurrent.ex3;
+package study.concurrent.ex3;
 
 public class Exam0230 {
 

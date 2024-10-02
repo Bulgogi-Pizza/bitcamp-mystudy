@@ -7,7 +7,7 @@
     
     <!-- 클래스 이름이 FactoryBean으로 끝나면 
          그 클래스가 FactoryBean 구현체임을 쉽게 눈치챌 수 있다. -->
-    <bean id="c1" class="com.eomcs.spring.ioc.ex06.e.CarFactoryBean">
+    <bean id="c1" class="study.spring.ioc.ex06.e.CarFactoryBean">
         <property name="model" value="소나타"/>
     </bean>
     <!-- 자바 코드:

@@ -1,11 +1,11 @@
-package com.eomcs.spring.ioc.ex12.a;
+package study.spring.ioc.ex12.a;
 
 import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
-import com.eomcs.spring.ioc.ex12.Board;
+import study.spring.ioc.ex12.Board;
 
 @Repository
 public class BoardDao {

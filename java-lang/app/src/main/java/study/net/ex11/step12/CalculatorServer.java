@@ -3,7 +3,7 @@
 // - 어떻게? 
 //   - 스레드 문법을 이용한다.
 // 
-package com.eomcs.net.ex11.step12;
+package study.net.ex11.step12;
 
 import java.net.ServerSocket;
 

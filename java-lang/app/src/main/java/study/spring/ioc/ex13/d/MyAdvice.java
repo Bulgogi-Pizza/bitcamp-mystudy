@@ -1,5 +1,5 @@
 // 특정 메서드 호출 전후에 실행되는 클래스
-package com.eomcs.spring.ioc.ex13.d;
+package study.spring.ioc.ex13.d;
 
 public class MyAdvice {
 
@@ -13,7 +13,7 @@ public class MyAdvice {
   // 2) XML 설정에서 파라미터 값을 받겠다고 지정하라.
   //
   //      <aop:before 
-  //            pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..)) and args(y,x)" 
+  //            pointcut="execution(* study.spring.ioc.ex13.d.X.*(..)) and args(y,x)"
   //            method="doBefore"/>
   // 
   //    - 파라미터 값은 설정에서 지정한 변수에 순선대로 전달 된다.
@@ -34,7 +34,7 @@ public class MyAdvice {
   // 2) XML 설정에서 리턴 값을 받겠다고 지정하라.
   //  
   //      <aop:after-returning 
-  //          pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..))" 
+  //          pointcut="execution(* study.spring.ioc.ex13.d.X.*(..))"
   //          method="doAfterReturning"
   //          returning="returnValue"/>
   //  
@@ -54,7 +54,7 @@ public class MyAdvice {
   // 2) XML 설정에서 예외 객체를 받겠다고 지정하라.
   // 
   //      <aop:after-throwing 
-  //          pointcut="execution(* com.eomcs.spring.ioc.ex13.d.X.*(..))" 
+  //          pointcut="execution(* study.spring.ioc.ex13.d.X.*(..))"
   //          method="doAfterThrowing"
   //          throwing="error"/>
   //

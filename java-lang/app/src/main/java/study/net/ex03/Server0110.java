@@ -1,5 +1,5 @@
 // 클라이언트와 입출력 테스트 - byte stream
-package com.eomcs.net.ex03;
+package study.net.ex03;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,19 +1,19 @@
 // Spring과 Mybatis 연동 : Java Config로 설정하기
-package com.eomcs.spring.ioc.ex12.e;
+package study.spring.ioc.ex12.e;
 
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
-import com.eomcs.spring.ioc.ex12.Board;
+import study.spring.ioc.SpringUtils;
+import study.spring.ioc.ex12.Board;
 
 public class Exam01 {
 
   public static void main(String[] args) {
     ApplicationContext iocContainer =
         new AnnotationConfigApplicationContext(AppConfig.class);
-    //new AnnotationConfigApplicationContext("com.eomcs.spring.ioc.ex12.e");
+    //new AnnotationConfigApplicationContext("study.spring.ioc.ex12.e");
 
     SpringUtils.printBeanList(iocContainer);
 

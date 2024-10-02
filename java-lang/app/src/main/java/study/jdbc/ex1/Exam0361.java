@@ -1,5 +1,5 @@
 // JDBC 프로그래밍 - DBMS에 SQL문 보내기 : delete, FK 가 참조하는 데이터 지우기
-package com.eomcs.jdbc.ex1;
+package study.jdbc.ex1;
 
 import java.sql.DriverManager;
 

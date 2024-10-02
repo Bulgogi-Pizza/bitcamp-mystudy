@@ -1,11 +1,11 @@
 // Spring과 Mybatis 연동 : mybatis에서 제공해주는 spring 연동 라이브러리 사용하기
-package com.eomcs.spring.ioc.ex12.c;
+package study.spring.ioc.ex12.c;
 
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.eomcs.spring.ioc.SpringUtils;
-import com.eomcs.spring.ioc.ex12.Board;
+import study.spring.ioc.SpringUtils;
+import study.spring.ioc.ex12.Board;
 
 public class Exam01 {
 
@@ -26,7 +26,7 @@ public class Exam01 {
     //    - 'spring-jdbc' 라이브러리를 추가해야 한다.
     //
     ApplicationContext iocContainer = new ClassPathXmlApplicationContext(//
-        "com/eomcs/spring/ioc/ex12/c/application-context.xml");
+        "study/spring/ioc/ex12/c/application-context.xml");
 
     SpringUtils.printBeanNames(iocContainer);
 

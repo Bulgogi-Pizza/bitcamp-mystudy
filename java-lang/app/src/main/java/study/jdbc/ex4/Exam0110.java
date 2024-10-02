@@ -1,5 +1,5 @@
 // 자식 테이블의 데이터를 함께 입력할 때 문제점
-package com.eomcs.jdbc.ex4;
+package study.jdbc.ex4;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

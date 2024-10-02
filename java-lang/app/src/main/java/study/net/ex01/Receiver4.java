@@ -1,5 +1,5 @@
 // 파일 받기
-package com.eomcs.net.ex01;
+package study.net.ex01;
 
 import java.io.DataInputStream;
 import java.io.File;

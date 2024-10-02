@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex08.g;
+package study.spring.ioc.ex08.g;
 
 import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;

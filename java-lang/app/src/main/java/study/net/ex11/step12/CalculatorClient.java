@@ -1,7 +1,7 @@
 // 계산기 클라이언트 만들기 - 12단계: 동시에 여러 클라이언트의 요청을 처리하기 (클라이언트 변경 없음)
 // - 스레드를 이용하면 동시에 여러 클라이언트 요청을 처리할 수 있다.
 //  
-package com.eomcs.net.ex11.step12;
+package study.net.ex11.step12;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

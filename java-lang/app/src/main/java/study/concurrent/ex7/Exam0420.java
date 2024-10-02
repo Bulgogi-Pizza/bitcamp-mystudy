@@ -1,5 +1,5 @@
 // Executors 태스크 프레임워크 - 스레드풀 종료 : shutdownNow()
-package com.eomcs.concurrent.ex7;
+package study.concurrent.ex7;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

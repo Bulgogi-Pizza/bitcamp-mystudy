@@ -1,5 +1,5 @@
 // 애노테이션 프로퍼티 타입
-package com.eomcs.annotation.ex6;
+package study.annotation.ex6;
 
 // @MyAnnotation5는 로컬 변수, 파라미터, 필드에만 붙일 수 있다.
 //@MyAnnotation5

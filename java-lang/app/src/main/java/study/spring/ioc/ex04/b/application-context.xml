@@ -7,7 +7,7 @@
     
     <!-- 프로퍼티 설정하기 = 셋터 호출하기 -->
     
-    <bean id="c1" class="com.eomcs.spring.ioc.ex04.Car">
+    <bean id="c1" class="study.spring.ioc.ex04.Car">
         <property name="model" value="티코3"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="890"/>
@@ -23,7 +23,7 @@
     
     <!-- 문자열을 프로퍼티의 타입으로 형변환 할 수 없다면 예외가 발생한다. 
     -->
-    <bean id="c2" class="com.eomcs.spring.ioc.ex04.Car">
+    <bean id="c2" class="study.spring.ioc.ex04.Car">
         <property name="model" value="티코3"/>
         <property name="maker" value="비트자동차"/>
         <property name="cc" value="aaa"/>

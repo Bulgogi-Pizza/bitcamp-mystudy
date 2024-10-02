@@ -1,5 +1,5 @@
 // 스레드의 생명주기(lifecycle) - 죽은 스레드는 다시 살릴 수 없다.
-package com.eomcs.concurrent.ex4;
+package study.concurrent.ex4;
 
 import java.util.Scanner;
 

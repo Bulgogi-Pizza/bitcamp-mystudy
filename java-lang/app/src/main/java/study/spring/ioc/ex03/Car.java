@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex03;
+package study.spring.ioc.ex03;
 
 public class Car {
   String model;

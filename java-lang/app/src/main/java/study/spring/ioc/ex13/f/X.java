@@ -1,4 +1,4 @@
-package com.eomcs.spring.ioc.ex13.f;
+package study.spring.ioc.ex13.f;
 
 import org.springframework.stereotype.Component;
 
