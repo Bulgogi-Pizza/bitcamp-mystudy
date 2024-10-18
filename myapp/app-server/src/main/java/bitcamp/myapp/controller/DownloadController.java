@@ -4,10 +4,8 @@ import bitcamp.myapp.service.BoardService;
 import bitcamp.myapp.service.StorageService;
 import bitcamp.myapp.vo.AttachedFile;
 import bitcamp.myapp.vo.User;
+import jakarta.servlet.http.HttpSession;
 import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.http.HttpSession;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +15,6 @@ public class DownloadController {
 
   private BoardService boardService;
   private StorageService storageService;
-
-  private Map<String, String> downloadPathMap = new HashMap<>();
 
   public DownloadController(BoardService boardService, StorageService storageService) {
     this.boardService = boardService;

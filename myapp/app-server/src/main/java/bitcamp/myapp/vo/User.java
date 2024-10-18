@@ -24,13 +24,13 @@ public class User implements Serializable {
   @Override
   public String toString() {
     return "User{" +
-        "no=" + no +
-        ", name='" + name + '\'' +
-        ", email='" + email + '\'' +
-        ", password='" + password + '\'' +
-        ", tel='" + tel + '\'' +
-        ", photo='" + photo + '\'' +
-        '}';
+            "no=" + no +
+            ", name='" + name + '\'' +
+            ", email='" + email + '\'' +
+            ", password='" + password + '\'' +
+            ", tel='" + tel + '\'' +
+            ", photo='" + photo + '\'' +
+            '}';
   }
 
   @Override

@@ -2,9 +2,10 @@ package bitcamp.myapp.service;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class DefaultUserService implements UserService {
