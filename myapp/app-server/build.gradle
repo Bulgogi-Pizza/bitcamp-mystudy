@@ -1,11 +1,25 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.3.4'
+    id 'org.springframework.boot' version '2.7.18'
     id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'bitcamp'
 version = '0.0.1-SNAPSHOT'
+
+// 스프링부트 실행 jar 파일을 만들 때 파일명 설정
+bootJar {
+    archiveFileName = "${rootProject.name}.jar"
+}
+
+// jar 태스크를 수행하지 않게 설정
+tasks.named("jar") {
+    enabled = false
+}
+
+bootRun {
+    systemProperty "spring.profiles.active", "dev"
+}
 
 java {
     toolchain {
@@ -25,10 +39,12 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.2'
-//    compileOnly 'org.projectlombok:lombok'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+    compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -36,13 +52,8 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.2'
+    testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-    // Tomcat Embedded Server 라이브러리
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.93'
-
-    // JSTL API 및 구현체 라이브러리
-    implementation 'javax.servlet:jstl:1.2'
 
     // Amazon S3 라이브러리
     implementation 'com.amazonaws:aws-java-sdk-s3:1.12.772'

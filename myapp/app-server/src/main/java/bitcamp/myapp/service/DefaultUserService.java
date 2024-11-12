@@ -2,19 +2,16 @@ package bitcamp.myapp.service;
 
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
+import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
+@RequiredArgsConstructor
 @Service
 public class DefaultUserService implements UserService {
 
-  private UserDao userDao;
-
-  public DefaultUserService(UserDao userDao) {
-    this.userDao = userDao;
-  }
+  private final UserDao userDao;
 
   @Transactional
   public void add(User user) throws Exception {
@@ -27,6 +24,10 @@ public class DefaultUserService implements UserService {
 
   public User get(int userNo) throws Exception {
     return userDao.findBy(userNo);
+  }
+
+  public User get(String email) throws Exception {
+    return userDao.findByEmail(email);
   }
 
   public User exists(String email, String password) throws Exception {
